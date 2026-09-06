@@ -107,5 +107,25 @@ footer{padding:35px 5%;border-top:1px solid #222;color:#777;font-size:13px;text-
 </main>
 
 <footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.</footer>
-</body>
+<script>
+const searchBox = document.querySelector('.search');
+
+searchBox.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const query = this.value.trim().toLowerCase();
+
+        if (query === '') return;
+
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            section.style.display = '';
+
+            if (!section.innerText.toLowerCase().includes(query)) {
+                section.style.display = 'none';
+            }
+        });
+    }
+});
+</script> </body>
 </html>
