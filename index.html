@@ -1,58 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JESSENDINHO™ — Your World. Your Screen.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JESSENDINHO™️ — Your World. Your Entertainment.</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#060b12;color:#f4f7fb;font-family:Arial,Helvetica,sans-serif}
-a{text-decoration:none;color:inherit}.top{height:70px;border-bottom:1px solid #1d2937;display:flex;align-items:center;gap:24px;padding:0 22px;position:sticky;top:0;background:#08101aee;backdrop-filter:blur(10px);z-index:5}
-.logo{font-size:25px;font-weight:900;font-style:italic;letter-spacing:-1px}.logo span{color:#ff2438}.tag{font-size:10px;color:#aab4c2;margin-top:-3px}
-.search{flex:1;max-width:560px;margin:auto;background:#111c2a;border:1px solid #2a394b;border-radius:28px;padding:13px 18px;color:#8e9aaa}
-.avatar{width:38px;height:38px;border-radius:50%;background:#26384c;display:grid;place-items:center;font-weight:bold}
-.layout{display:grid;grid-template-columns:205px 1fr;min-height:calc(100vh - 70px)}
-.side{border-right:1px solid #172332;padding:22px 12px}.nav{padding:12px 15px;border-radius:10px;margin:5px 0;color:#b9c3d0}.nav.active{background:#ff2438;color:white;font-weight:bold}.nav:hover{background:#152131}.section{margin:25px 10px 8px;color:#6f7c8d;font-size:11px;text-transform:uppercase}
-.main{padding:18px;max-width:1450px;width:100%;margin:auto}.hero{min-height:330px;border-radius:14px;overflow:hidden;padding:35px;display:flex;align-items:center;background:linear-gradient(90deg,#080b10 5%,#111827cc 50%,#11182733),url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=80") center/cover}
-.hero h1{font-size:42px;max-width:620px;margin:10px 0}.hero p{color:#c8d0da;max-width:560px;line-height:1.5}.badge{display:inline-block;background:#ff2438;padding:7px 12px;border-radius:20px;font-size:12px;font-weight:bold}.btn{display:inline-block;background:#ff2438;padding:13px 22px;border-radius:24px;font-weight:bold;margin-top:8px}
-.rowhead{display:flex;justify-content:space-between;align-items:center;margin:25px 0 12px}.rowhead h2{margin:0;font-size:20px}.rowhead small{color:#8e9aaa}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#0b131e;border:1px solid #182535;border-radius:10px;overflow:hidden}.thumb{aspect-ratio:16/9;background:#1a2736;position:relative;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;display:block}.duration{position:absolute;right:7px;bottom:7px;background:#000c;padding:4px 6px;border-radius:4px;font-size:11px}.cardbody{padding:10px}.title{font-weight:bold;line-height:1.3;font-size:14px}.meta{color:#7f8b9b;font-size:11px;margin-top:7px}.pill{display:inline-block;margin-top:8px;background:#17283b;color:#79baff;border-radius:12px;padding:4px 8px;font-size:10px}
-footer{margin-top:30px;border-radius:12px;padding:28px;background:#100d15;text-align:center;border:1px solid #252033}.red{color:#ff2438}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.side{display:none}.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}.search{display:none}}
-@media(max-width:520px){.main{padding:10px}.grid{grid-template-columns:1fr}.hero{min-height:300px;padding:22px}.hero h1{font-size:27px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff}
+a{text-decoration:none;color:inherit}
+header{height:70px;background:#0d0d0d;border-bottom:1px solid #222;display:flex;align-items:center;padding:0 5%;gap:35px;position:sticky;top:0;z-index:10}
+.logo{font-size:23px;font-weight:900;letter-spacing:.5px;color:#e50914;white-space:nowrap}
+nav{display:flex;gap:22px;font-size:14px}
+nav a:hover{color:#e50914}
+.search{margin-left:auto;background:#171717;border:1px solid #292929;border-radius:22px;padding:10px 16px;color:#aaa;min-width:170px}
+.sign{background:#e50914;padding:10px 18px;border-radius:20px;font-weight:bold;font-size:13px}
+.hero{min-height:430px;padding:75px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#0b0b0b 20%,rgba(11,11,11,.72),rgba(11,11,11,.2)),radial-gradient(circle at 80% 45%,#551018 0,#171012 35%,#080808 70%)}
+.hero-content{max-width:650px}
+.badge{display:inline-block;background:#e50914;padding:7px 12px;border-radius:5px;font-size:11px;font-weight:bold;margin-bottom:18px}
+h1{font-size:54px;line-height:1.02;margin-bottom:18px}
+.hero p{color:#bbb;font-size:17px;line-height:1.6;margin-bottom:25px}
+.cta{display:inline-block;background:#fff;color:#000;padding:13px 22px;border-radius:5px;font-weight:bold}
+section{padding:38px 5%}
+.section-title{font-size:24px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#121212;border:1px solid #222;border-radius:9px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#e50914}
+.thumb{height:145px;background:linear-gradient(135deg,#262626,#101010);display:flex;align-items:center;justify-content:center;font-size:38px}
+.card-body{padding:14px}
+.card h3{font-size:15px;margin-bottom:7px}
+.card p{font-size:12px;color:#888}
+footer{padding:35px 5%;border-top:1px solid #222;color:#777;font-size:13px;text-align:center}
+@media(max-width:850px){header{gap:14px;padding:0 4%}nav{display:none}.search{min-width:110px}.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:40px}.hero{padding:60px 6%}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.search{display:none}.hero{min-height:390px}}
 </style>
 </head>
 <body>
-<header class="top">
-  <div><div class="logo">JESSENDINHO<span>™</span></div><div class="tag">Your World. Your Screen.</div></div>
-  <div class="search">🔎 Search videos, creators, topics...</div>
-  <div>🔔</div><div class="avatar">JG</div>
+<header>
+<a class="logo" href="index.html">JESSENDINHO™️</a>
+<nav>
+<a href="index.html">Home</a><a href="#football">Football</a><a href="#gaming">Gaming</a><a href="#entertainment">Entertainment</a><a href="#news">News</a>
+</nav>
+<div class="search">🔎 Search</div>
+<a class="sign" href="watch.html">Sign In</a>
 </header>
-<div class="layout">
-<aside class="side">
-  <div class="nav active">🏠 Home</div><div class="nav">🎬 Videos</div><div class="nav">⚽ Football</div><div class="nav">🎮 Gaming</div><div class="nav">📡 Live</div><div class="nav">🔥 Trending</div>
-  <div class="section">My Library</div><div class="nav">🕘 Watch Later</div><div class="nav">❤️ Liked Videos</div><div class="nav">📁 My Playlist</div>
-  <div class="section">Creator</div><div class="nav">📊 Dashboard</div><div class="nav">⬆️ Upload Video</div>
-</aside>
-<main class="main">
+
+<main>
 <section class="hero">
-<div><span class="badge">FEATURED</span><h1>Welcome to JESSENDINHO™️</h1><p>Football, gaming, news, entertainment and original videos — all in one place.</p><a class="btn" href="#videos">▶ Watch Videos</a></div>
-</section>
-<div class="rowhead"><h2>🔥 Trending Now</h2><small>See all →</small></div>
-<section id="videos" class="grid">
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"><span class="duration">12:45</span></div><div class="cardbody"><div class="title">Football Transfer News & Rumours</div><div class="meta">JESSENDINHO™️ • 125K views • 2 days ago</div><span class="pill">Football</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=600&q=80"><span class="duration">10:32</span></div><div class="cardbody"><div class="title">Ronaldo vs Messi — The Debate</div><div class="meta">JESSENDINHO™️ • 98K views • 4 days ago</div><span class="pill">Football</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80"><span class="duration">14:20</span></div><div class="cardbody"><div class="title">DLS — Best Formation & Tactics</div><div class="meta">JESSENDINHO™️ • 76K views • 5 days ago</div><span class="pill">Gaming</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=600&q=80"><span class="duration">11:15</span></div><div class="cardbody"><div class="title">Kenya's Latest News & What's Next?</div><div class="meta">JESSENDINHO™️ • 64K views • 6 days ago</div><span class="pill">News</span></div></article>
-</section>
-<div class="rowhead"><h2>⚽ Football</h2><small>See all →</small></div>
-<section class="grid">
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80"><span class="duration">15:40</span></div><div class="cardbody"><div class="title">Top 10 Greatest Football Players</div><div class="meta">210K views • 1 week ago</div><span class="pill">Football</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80"><span class="duration">9:50</span></div><div class="cardbody"><div class="title">Premier League Matchday Review</div><div class="meta">88K views • 2 days ago</div><span class="pill">Football</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"><span class="duration">16:30</span></div><div class="cardbody"><div class="title">Premier League Clubs Ranked</div><div class="meta">142K views • 5 days ago</div><span class="pill">Football</span></div></article>
-  <article class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=600&q=80"><span class="duration">13:12</span></div><div class="cardbody"><div class="title">World Cup Preview & Predictions</div><div class="meta">97K views • 6 days ago</div><span class="pill">Football</span></div></article>
-</section>
-<footer><div class="logo">JESSENDINHO<span>™</span></div><p>Football. Gaming. News. Entertainment. And More.</p><small>© 2026 JESSENDINHO™️ — Prototype V1</small></footer>
-</main>
+<div class="hero-content">
+<span class="badge">JESSENDINHO STREAM</span>
+<h1>Your World.<br>Your Entertainment.</h1>
+<p>Discover football, gaming, entertainment and breaking stories — all in one place.</p>
+<a class="cta" href="watch.html">▶ Watch Now</a>
 </div>
+</section>
+
+<section>
+<h2 class="section-title">🔥 Trending Now</h2>
+<div class="grid">
+<a class="card" href="watch.html"><div class="thumb">⚽</div><div class="card-body"><h3>Football Matchday Central</h3><p>Live • Football</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🎮</div><div class="card-body"><h3>Gaming Zone</h3><p>Gaming • Featured</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🎤</div><div class="card-body"><h3>Entertainment Live</h3><p>Entertainment • Trending</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">📰</div><div class="card-body"><h3>Latest News</h3><p>News • Updates</p></div></a>
+</div>
+</section>
+
+<section id="football">
+<h2 class="section-title">⚽ Football</h2>
+<div class="grid">
+<a class="card" href="watch.html"><div class="thumb">🏆</div><div class="card-body"><h3>Matchday Central</h3><p>Watch • Football</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🔥</div><div class="card-body"><h3>Football Highlights</h3><p>Highlights • Football</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🎙️</div><div class="card-body"><h3>Football Talk</h3><p>Show • Football</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">📊</div><div class="card-body"><h3>Scores & Analysis</h3><p>Analysis • Football</p></div></a>
+</div>
+</section>
+
+<section id="gaming">
+<h2 class="section-title">🎮 Gaming</h2>
+<div class="grid">
+<a class="card" href="watch.html"><div class="thumb">🎮</div><div class="card-body"><h3>Gaming Live</h3><p>Live • Gaming</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🏅</div><div class="card-body"><h3>Gaming Challenges</h3><p>Gaming • Challenges</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">📱</div><div class="card-body"><h3>Mobile Gaming</h3><p>Gaming • Mobile</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🎥</div><div class="card-body"><h3>Creator Streams</h3><p>Gaming • Creators</p></div></a>
+</div>
+</section>
+
+<section id="entertainment">
+<h2 class="section-title">🎤 Entertainment</h2>
+<div class="grid">
+<a class="card" href="watch.html"><div class="thumb">🎬</div><div class="card-body"><h3>Entertainment Live</h3><p>Live • Entertainment</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🎵</div><div class="card-body"><h3>Music & Shows</h3><p>Entertainment • Music</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">⭐</div><div class="card-body"><h3>Celebrity Stories</h3><p>Entertainment • Stars</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">😂</div><div class="card-body"><h3>Viral Moments</h3><p>Entertainment • Viral</p></div></a>
+</div>
+</section>
+
+<section id="news">
+<h2 class="section-title">📰 Latest News</h2>
+<div class="grid">
+<a class="card" href="watch.html"><div class="thumb">🌍</div><div class="card-body"><h3>Top Stories</h3><p>News • Today</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🇰🇪</div><div class="card-body"><h3>Kenya Updates</h3><p>News • Kenya</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">🌐</div><div class="card-body"><h3>World News</h3><p>News • World</p></div></a>
+<a class="card" href="watch.html"><div class="thumb">⚡</div><div class="card-body"><h3>Breaking</h3><p>News • Breaking</p></div></a>
+</div>
+</section>
+</main>
+
+<footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.</footer>
 </body>
 </html>
