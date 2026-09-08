@@ -143,28 +143,5 @@ Watch live football, gaming, entertainment and special events — all in one pla
 
 </main><footer>
     © 2026 JESSENDINHO™️ — All Rights Reserved
-</footer><script>
-const liveBadge = document.querySelector(".live-badge");
-
-async function checkStreamStatus() {
-    try {
-        const response = await fetch(
-            "https://owncast-rq1yq-u78472.vm.elestio.app/api/status"
-        );
-
-        const data = await response.json();
-
-        if (data.online === true) {
-            liveBadge.textContent = "● LIVE";
-        } else {
-            liveBadge.textContent = "● OFFLINE";
-        }
-    } catch (error) {
-        liveBadge.textContent = "● OFFLINE";
-    }
-}
-
-checkStreamStatus();
-setInterval(checkStreamStatus, 30000);
-            </script></body>
+</footer></body>
 </html>
