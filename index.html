@@ -3,102 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JESSENDINHO™️ — Your World. Your Entertainment.</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff}
-a{text-decoration:none;color:inherit}
-header{height:70px;background:#0d0d0d;border-bottom:1px solid #222;display:flex;align-items:center;padding:0 5%;gap:35px;position:sticky;top:0;z-index:10}
-.logo{font-size:23px;font-weight:900;letter-spacing:.5px;color:#e50914;white-space:nowrap}.logo img{width:48px;height:48px;object-fit:cover;display:block}
-nav{display:flex;gap:22px;font-size:14px}
-nav a:hover{color:#e50914}
 
-.search::placeholder{color:#aaa}
-.sign{background:#e50914;padding:10px 18px;border-radius:20px;font-weight:bold;font-size:13px}
-.hero{min-height:430px;padding:75px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#0b0b0b 20%,rgba(11,11,11,.72),rgba(11,11,11,.2)),radial-gradient(circle at 80% 45%,#551018 0,#171012 35%,#080808 70%)}
-.hero-content{max-width:650px}
-.badge{display:inline-block;background:#e50914;padding:7px 12px;border-radius:5px;font-size:11px;font-weight:bold;margin-bottom:18px}
-h1{font-size:54px;line-height:1.02;margin-bottom:18px}
-.hero p{color:#bbb;font-size:17px;line-height:1.6;margin-bottom:25px}
-.cta{display:inline-block;background:#fff;color:#000;padding:13px 22px;border-radius:5px;font-weight:bold}
-section{padding:38px 5%}
-.section-title{font-size:24px;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:#121212;border:1px solid #222;border-radius:9px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#e50914}
-.thumb{height:145px;background:linear-gradient(135deg,#262626,#101010);display:flex;align-items:center;justify-content:center;font-size:38px}
-.card-body{padding:14px}
-.card h3{font-size:15px;margin-bottom:7px}
-.card p{font-size:12px;color:#888}
-footer{padding:35px 5%;border-top:1px solid #222;color:#777;font-size:13px;text-align:center}
-@media(max-width:850px){header{gap:10px;padding:0 3%}.logo{font-size:18px}nav{display:none}.search{min-width:100px;flex:1}.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:40px}.hero{padding:60px 6%}}
-@media(max-width:480px){.grid{grid-template-columns:1fr}.search{display:block}.hero{min-height:390px}}
+<title>JESSENDINHO™️ — Your World. Your Entertainment.</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#080808;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+header{
+    height:70px;
+    background:#0d0d0d;
+    border-bottom:1px solid #222;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:cover;
+    display:block;
+}
+
+/* WATCH BUTTON */
+.sign{
+    background:#e50914;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.sign:hover{
+    background:#b80710;
+}
+
+/* HERO */
+.hero{
+    min-height:430px;
+    padding:75px 7%;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0b0b0b 20%,
+        rgba(11,11,11,.72),
+        rgba(11,11,11,.2)
+    ),
+    radial-gradient(
+        circle at 80% 45%,
+        #551018 0,
+        #171012 35%,
+        #080808 70%
+    );
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e50914;
+    padding:7px 12px;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:54px;
+    line-height:1.02;
+    margin-bottom:18px;
+}
+
+.hero p{
+    color:#bbb;
+    font-size:17px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.cta{
+    display:inline-block;
+    background:#fff;
+    color:#000;
+    padding:13px 22px;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.cta:hover{
+    background:#e50914;
+    color:#fff;
+}
+
+/* SECTIONS */
+section{
+    padding:38px 5%;
+}
+
+.section-title{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.card{
+    background:#121212;
+    border:1px solid #222;
+    border-radius:9px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#e50914;
+}
+
+.thumb{
+    height:145px;
+    background:linear-gradient(135deg,#262626,#101010);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.card-body{
+    padding:14px;
+}
+
+.card h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.card p{
+    font-size:12px;
+    color:#888;
+}
+
+/* FOOTER */
+footer{
+    padding:35px 5%;
+    border-top:1px solid #222;
+    color:#777;
+    font-size:13px;
+    text-align:center;
+}
+
+/* TABLET */
+@media(max-width:850px){
+
+    header{
+        padding:0 3%;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    .hero{
+        padding:60px 6%;
+    }
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .logo img{
+        width:44px;
+        height:44px;
+    }
+
+    .sign{
+        padding:9px 15px;
+        font-size:12px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:390px;
+        padding:55px 6%;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:30px 5%;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<a class="logo" href="index.html"><img src="jessendinho-logo.png" alt="JESSENDINHO™️"></a>
 
+    <a class="logo" href="index.html">
+        <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
+    </a>
 
-<a class="sign" href="watch.html">Watch Live</a>
+    <a class="sign" href="watch.html">
+        Watch Live
+    </a>
+
 </header>
 
 <main>
-<section class="hero">
-<div class="hero-content">
-<span class="badge">JESSENDINHO STREAM</span>
-<h1>Your World.<br>Your Entertainment.</h1>
-<p>Discover football, gaming, entertainment and breaking stories — all in one place.</p>
-<a class="cta" href="watch.html">▶ Watch Now</a>
-</div>
-</section>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                JESSENDINHO STREAM
+            </span>
+
+            <h1>
+                Your World.<br>
+                Your Entertainment.
+            </h1>
+
+            <p>
+                Discover football, gaming, entertainment and breaking stories —
+                all in one place.
+            </p>
+
+            <a class="cta" href="watch.html">
+                ▶ Watch Now
+            </a>
+
+        </div>
+
+    </section>
 
 
+    <!-- FOOTBALL -->
+    <section>
 
-<section id="football">
-<h2 class="section-title">⚽ Football</h2>
-<div class="grid">
-<a class="card" href="watch.html"><div class="thumb">🏆</div><div class="card-body"><h3>Matchday Central</h3><p>Watch • Football</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">🔥</div><div class="card-body"><h3>Football Highlights</h3><p>Highlights • Football</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">🎙️</div><div class="card-body"><h3>Football Talk</h3><p>Show • Football</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">📊</div><div class="card-body"><h3>Scores & Analysis</h3><p>Analysis • Football</p></div></a>
-</div>
-</section>
+        <h2 class="section-title">
+            ⚽ Football
+        </h2>
 
-<section id="gaming">
-<h2 class="section-title">🎮 Gaming</h2>
-<div class="grid">
-<a class="card" href="watch.html"><div class="thumb">🎮</div><div class="card-body"><h3>Gaming Live</h3><p>Live • Gaming</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">🏅</div><div class="card-body"><h3>Gaming Challenges</h3><p>Gaming • Challenges</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">📱</div><div class="card-body"><h3>Mobile Gaming</h3><p>Gaming • Mobile</p></div></a>
-<a class="card" href="watch.html"><div class="thumb">🎥</div><div class="card-body"><h3>Creator Streams</h3><p>Gaming • Creators</p></div></a>
-</div>
-</section>
+        <div class="grid">
 
+            <a class="card" href="watch.html">
+                <div class="thumb">🏆</div>
+
+                <div class="card-body">
+                    <h3>Matchday Central</h3>
+                    <p>Watch • Football</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">🔥</div>
+
+                <div class="card-body">
+                    <h3>Football Highlights</h3>
+                    <p>Highlights • Football</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">🎙️</div>
+
+                <div class="card-body">
+                    <h3>Football Talk</h3>
+                    <p>Show • Football</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">📊</div>
+
+                <div class="card-body">
+                    <h3>Scores & Analysis</h3>
+                    <p>Analysis • Football</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAMING -->
+    <section>
+
+        <h2 class="section-title">
+            🎮 Gaming
+        </h2>
+
+        <div class="grid">
+
+            <a class="card" href="watch.html">
+                <div class="thumb">🎮</div>
+
+                <div class="card-body">
+                    <h3>Gaming Live</h3>
+                    <p>Live • Gaming</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">🏅</div>
+
+                <div class="card-body">
+                    <h3>Gaming Challenges</h3>
+                    <p>Gaming • Challenges</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">📱</div>
+
+                <div class="card-body">
+                    <h3>Mobile Gaming</h3>
+                    <p>Gaming • Mobile</p>
+                </div>
+            </a>
+
+
+            <a class="card" href="watch.html">
+                <div class="thumb">🎥</div>
+
+                <div class="card-body">
+                    <h3>Creator Streams</h3>
+                    <p>Gaming • Creators</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
 
 </main>
 
-<footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.</footer>
 
+<footer>
+    © 2026 JESSENDINHO™️ — Your World. Your Entertainment.
+</footer>
 
-searchBox.addEventListener('keydown <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const searchBox = document.querySelector(".search");
-    const cards = document.querySelectorAll(".card");
-
-    searchBox.addEventListener("input", function () {
-        const query = searchBox.value.toLowerCase().trim();
-
-        cards.forEach(function (card) {
-            const text = card.textContent.toLowerCase();
-
-            if (query === "" || text.includes(query)) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    });
-});
-</script> </body>
-</html>
+</body>
+                    </html>
