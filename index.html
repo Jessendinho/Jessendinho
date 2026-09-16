@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>JESSENDINHO™️ — Your World. Your Entertainment.</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -25,9 +27,10 @@ a{
 }
 
 /* HEADER */
+
 header{
     height:70px;
-    background:#0d0d0d;
+    background:#0b0b0b;
     border-bottom:1px solid #222;
     display:flex;
     align-items:center;
@@ -35,7 +38,7 @@ header{
     padding:0 5%;
     position:sticky;
     top:0;
-    z-index:10;
+    z-index:100;
 }
 
 .logo img{
@@ -45,93 +48,126 @@ header{
     display:block;
 }
 
-/* WATCH BUTTON */
-.sign{
+.watch-button{
     background:#e50914;
-    padding:10px 18px;
-    border-radius:20px;
-    font-weight:bold;
+    color:#fff;
+    padding:11px 20px;
+    border-radius:6px;
     font-size:13px;
+    font-weight:bold;
+    transition:.2s;
 }
 
-.sign:hover{
+.watch-button:hover{
     background:#b80710;
 }
 
 /* HERO */
+
 .hero{
-    min-height:430px;
-    padding:75px 7%;
+    min-height:520px;
     display:flex;
     align-items:center;
+    padding:80px 7%;
 
     background:
     linear-gradient(
         90deg,
-        #0b0b0b 20%,
-        rgba(11,11,11,.72),
-        rgba(11,11,11,.2)
+        #080808 10%,
+        rgba(8,8,8,.88) 40%,
+        rgba(8,8,8,.35) 75%,
+        #080808 100%
     ),
     radial-gradient(
-        circle at 80% 45%,
-        #551018 0,
-        #171012 35%,
-        #080808 70%
+        circle at 78% 45%,
+        #65151c 0%,
+        #241014 30%,
+        #0b0b0b 70%
     );
 }
 
 .hero-content{
-    max-width:650px;
+    max-width:700px;
 }
 
-.badge{
+.eyebrow{
     display:inline-block;
-    background:#e50914;
-    padding:7px 12px;
-    border-radius:5px;
-    font-size:11px;
+    color:#e50914;
+    font-size:12px;
     font-weight:bold;
+    letter-spacing:2px;
     margin-bottom:18px;
 }
 
 h1{
-    font-size:54px;
+    font-size:64px;
     line-height:1.02;
-    margin-bottom:18px;
+    letter-spacing:-2px;
+    margin-bottom:22px;
 }
 
 .hero p{
-    color:#bbb;
-    font-size:17px;
-    line-height:1.6;
-    margin-bottom:25px;
+    max-width:600px;
+    color:#aaa;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
 }
 
-.cta{
-    display:inline-block;
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary-button{
     background:#fff;
     color:#000;
-    padding:13px 22px;
-    border-radius:5px;
+    padding:14px 23px;
+    border-radius:6px;
     font-weight:bold;
 }
 
-.cta:hover{
+.primary-button:hover{
     background:#e50914;
     color:#fff;
 }
 
-/* SECTIONS */
+.secondary-button{
+    border:1px solid #444;
+    padding:14px 23px;
+    border-radius:6px;
+    color:#ddd;
+}
+
+.secondary-button:hover{
+    border-color:#fff;
+}
+
+/* CONTENT */
+
 section{
-    padding:38px 5%;
+    padding:45px 5%;
 }
 
-.section-title{
-    font-size:24px;
-    margin-bottom:20px;
+.section-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:22px;
 }
 
-/* CARDS */
+.section-heading h2{
+    font-size:25px;
+}
+
+.section-heading span{
+    color:#777;
+    font-size:13px;
+}
+
+/* CONTENT GRID */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -139,94 +175,144 @@ section{
 }
 
 .card{
-    background:#121212;
+    background:#111;
     border:1px solid #222;
-    border-radius:9px;
+    border-radius:10px;
     overflow:hidden;
-    transition:.2s;
+    transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
     border-color:#e50914;
 }
 
-.thumb{
-    height:145px;
-    background:linear-gradient(135deg,#262626,#101010);
+.card-image{
+    height:160px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:38px;
+    font-size:45px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #292929,
+        #101010
+    );
 }
 
 .card-body{
-    padding:14px;
+    padding:16px;
 }
 
 .card h3{
-    font-size:15px;
+    font-size:16px;
     margin-bottom:7px;
 }
 
 .card p{
+    color:#777;
     font-size:12px;
-    color:#888;
+}
+
+/* FEATURED */
+
+.featured{
+    background:#0d0d0d;
+    border-top:1px solid #181818;
+    border-bottom:1px solid #181818;
+}
+
+.featured-box{
+    min-height:230px;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:35px;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        90deg,
+        #151515,
+        #0d0d0d
+    );
+}
+
+.featured-content{
+    max-width:650px;
+}
+
+.featured-label{
+    color:#e50914;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1.5px;
+    margin-bottom:12px;
+}
+
+.featured h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.featured p{
+    color:#999;
+    line-height:1.6;
+    margin-bottom:20px;
 }
 
 /* FOOTER */
+
 footer{
-    padding:35px 5%;
     border-top:1px solid #222;
-    color:#777;
-    font-size:13px;
     text-align:center;
+    padding:40px 20px;
+    color:#666;
+    font-size:13px;
 }
 
 /* TABLET */
-@media(max-width:850px){
 
-    header{
-        padding:0 3%;
-    }
+@media(max-width:900px){
 
     .grid{
         grid-template-columns:repeat(2,1fr);
     }
 
     h1{
-        font-size:40px;
+        font-size:50px;
     }
 
-    .hero{
-        padding:60px 6%;
-    }
 }
 
 /* MOBILE */
-@media(max-width:480px){
+
+@media(max-width:600px){
+
+    header{
+        padding:0 4%;
+    }
 
     .logo img{
         width:44px;
         height:44px;
     }
 
-    .sign{
+    .watch-button{
         padding:9px 15px;
         font-size:12px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
-    }
-
     .hero{
-        min-height:390px;
-        padding:55px 6%;
+        min-height:480px;
+        padding:65px 6%;
     }
 
     h1{
-        font-size:38px;
+        font-size:40px;
+        letter-spacing:-1px;
     }
 
     .hero p{
@@ -234,167 +320,441 @@ footer{
     }
 
     section{
-        padding:30px 5%;
+        padding:35px 5%;
     }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-box{
+        padding:25px;
+    }
+
+    .featured h2{
+        font-size:24px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <header>
 
-    <a class="logo" href="index.html">
+    <a href="index.html" class="logo">
         <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
     </a>
 
-    <a class="sign" href="watch.html">
+    <a href="watch.html" class="watch-button">
         Watch Live
     </a>
 
 </header>
 
+
 <main>
 
-    <!-- HERO -->
-    <section class="hero">
+<!-- HERO -->
 
-        <div class="hero-content">
+<section class="hero">
 
-            <span class="badge">
-                JESSENDINHO STREAM
-            </span>
+    <div class="hero-content">
 
-            <h1>
-                Your World.<br>
-                Your Entertainment.
-            </h1>
+        <div class="eyebrow">
+            JESSENDINHO™️
+        </div>
 
-            <p>
-                Discover football, gaming, entertainment and breaking stories —
-                all in one place.
-            </p>
+        <h1>
+            Your World.<br>
+            Your Entertainment.
+        </h1>
 
-            <a class="cta" href="watch.html">
-                ▶ Watch Now
+        <p>
+            Football, gaming, entertainment and live experiences —
+            all brought together in one global destination.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="watch.html" class="primary-button">
+                ▶ Watch Live
+            </a>
+
+            <a href="#explore" class="secondary-button">
+                Explore
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FOOTBALL -->
-    <section>
+<!-- FEATURED -->
 
-        <h2 class="section-title">
+<section class="featured">
+
+    <div class="featured-box">
+
+        <div class="featured-content">
+
+            <div class="featured-label">
+                JESSENDINHO LIVE
+            </div>
+
+            <h2>
+                Something is always happening.
+            </h2>
+
+            <p>
+                Join JESSENDINHO™️ for live broadcasts,
+                special events, gaming sessions and entertainment.
+            </p>
+
+            <a href="watch.html" class="primary-button">
+                Watch Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPLORE -->
+
+<section id="explore">
+
+    <div class="section-heading">
+
+        <h2>
+            Explore
+        </h2>
+
+        <span>
+            Discover JESSENDINHO™️
+        </span>
+
+    </div>
+
+
+    <div class="grid">
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                ⚽
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Football
+                </h3>
+
+                <p>
+                    Matches • Highlights • Analysis
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🎮
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Gaming
+                </h3>
+
+                <p>
+                    Live Gaming • Challenges • Creators
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🎬
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Entertainment
+                </h3>
+
+                <p>
+                    Shows • Stories • Special Content
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🔴
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Live Events
+                </h3>
+
+                <p>
+                    Live • Exclusive • Worldwide
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTBALL -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>
             ⚽ Football
         </h2>
 
-        <div class="grid">
+        <span>
+            More coming soon
+        </span>
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🏆</div>
-
-                <div class="card-body">
-                    <h3>Matchday Central</h3>
-                    <p>Watch • Football</p>
-                </div>
-            </a>
+    </div>
 
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🔥</div>
+    <div class="grid">
 
-                <div class="card-body">
-                    <h3>Football Highlights</h3>
-                    <p>Highlights • Football</p>
-                </div>
-            </a>
+        <a href="watch.html" class="card">
 
+            <div class="card-image">
+                🏆
+            </div>
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🎙️</div>
+            <div class="card-body">
 
-                <div class="card-body">
-                    <h3>Football Talk</h3>
-                    <p>Show • Football</p>
-                </div>
-            </a>
+                <h3>
+                    Matchday Central
+                </h3>
 
+                <p>
+                    Football
+                </p>
 
-            <a class="card" href="watch.html">
-                <div class="thumb">📊</div>
+            </div>
 
-                <div class="card-body">
-                    <h3>Scores & Analysis</h3>
-                    <p>Analysis • Football</p>
-                </div>
-            </a>
-
-        </div>
-
-    </section>
+        </a>
 
 
-    <!-- GAMING -->
-    <section>
+        <a href="watch.html" class="card">
 
-        <h2 class="section-title">
+            <div class="card-image">
+                🔥
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Football Highlights
+                </h3>
+
+                <p>
+                    Highlights
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🎙️
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Football Talk
+                </h3>
+
+                <p>
+                    Shows
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                📊
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Scores & Analysis
+                </h3>
+
+                <p>
+                    Analysis
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GAMING -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>
             🎮 Gaming
         </h2>
 
-        <div class="grid">
+        <span>
+            More coming soon
+        </span>
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🎮</div>
-
-                <div class="card-body">
-                    <h3>Gaming Live</h3>
-                    <p>Live • Gaming</p>
-                </div>
-            </a>
+    </div>
 
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🏅</div>
+    <div class="grid">
 
-                <div class="card-body">
-                    <h3>Gaming Challenges</h3>
-                    <p>Gaming • Challenges</p>
-                </div>
-            </a>
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🎮
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Gaming Live
+                </h3>
+
+                <p>
+                    Live Gaming
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <a class="card" href="watch.html">
-                <div class="thumb">📱</div>
+        <a href="watch.html" class="card">
 
-                <div class="card-body">
-                    <h3>Mobile Gaming</h3>
-                    <p>Gaming • Mobile</p>
-                </div>
-            </a>
+            <div class="card-image">
+                🏅
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Gaming Challenges
+                </h3>
+
+                <p>
+                    Challenges
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <a class="card" href="watch.html">
-                <div class="thumb">🎥</div>
+        <a href="watch.html" class="card">
 
-                <div class="card-body">
-                    <h3>Creator Streams</h3>
-                    <p>Gaming • Creators</p>
-                </div>
-            </a>
+            <div class="card-image">
+                📱
+            </div>
 
-        </div>
+            <div class="card-body">
 
-    </section>
+                <h3>
+                    Mobile Gaming
+                </h3>
+
+                <p>
+                    Mobile
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="watch.html" class="card">
+
+            <div class="card-image">
+                🎥
+            </div>
+
+            <div class="card-body">
+
+                <h3>
+                    Creator Streams
+                </h3>
+
+                <p>
+                    Creators
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 
 </main>
 
 
 <footer>
+
     © 2026 JESSENDINHO™️ — Your World. Your Entertainment.
+
 </footer>
 
 </body>
-                    </html>
+</html>
