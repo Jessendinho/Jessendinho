@@ -1,195 +1,189 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html><html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JESSENDINHO™️ — Explore</title><style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JESSENDINHO™️ — Explore</title>
-
-<style>
-
-body {
-    margin: 0;
-    background: #080808;
-    color: white;
-    font-family: Arial, sans-serif;
+*{
+    box-sizing:border-box;
 }
 
-header {
-    height: 70px;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    border-bottom: 1px solid #222;
+body{
+    margin:0;
+    background:#080808;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
-.logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.home {
-    color: #bbb;
-    text-decoration: none;
+/* HEADER */
+
+header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:#111;
+    border-bottom:1px solid #222;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 50px auto;
+.logo img{
+    width:46px;
+    height:46px;
+    object-fit:cover;
+    display:block;
 }
 
-h1 {
-    font-size: 45px;
+.home{
+    color:#aaa;
+    font-size:14px;
 }
 
-.subtitle {
-    color: #999;
-    margin-bottom: 35px;
+.home:hover{
+    color:#fff;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+/* MAIN */
+
+.container{
+    width:min(1100px,92%);
+    margin:60px auto;
 }
 
-.card {
-    background: #151515;
-    border: 1px solid #292929;
-    border-radius: 12px;
-    padding: 30px;
-    min-height: 150px;
-    text-decoration: none;
-    color: white;
+.hero{
+    margin-bottom:45px;
 }
 
-.card:hover {
-    border-color: #e50914;
+.hero h1{
+    font-size:52px;
+    margin:0 0 12px;
+    letter-spacing:-1px;
 }
 
-.icon {
-    font-size: 45px;
+.hero p{
+    color:#999;
+    font-size:17px;
+    max-width:650px;
+    line-height:1.6;
 }
 
-.card h2 {
-    margin: 15px 0 8px;
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
 
-.card p {
-    color: #888;
+.card{
+    position:relative;
+    min-height:210px;
+    padding:32px;
+    background:linear-gradient(145deg,#181818,#101010);
+    border:1px solid #292929;
+    border-radius:16px;
+    overflow:hidden;
+    transition:transform .25s ease,
+               border-color .25s ease;
 }
 
-footer {
-    text-align: center;
-    color: #666;
-    padding: 50px 20px;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#e50914;
 }
 
-@media (max-width: 600px) {
+.icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
 
-    .grid {
-        grid-template-columns: 1fr;
+.card h2{
+    margin:0 0 10px;
+    font-size:25px;
+}
+
+.card p{
+    margin:0;
+    color:#888;
+    line-height:1.5;
+}
+
+.arrow{
+    position:absolute;
+    right:25px;
+    bottom:22px;
+    color:#777;
+    font-size:22px;
+}
+
+.card:hover .arrow{
+    color:#e50914;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#555;
+    padding:50px 20px;
+    border-top:1px solid #1d1d1d;
+    margin-top:70px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    .container{
+        margin:40px auto;
     }
 
-    h1 {
-        font-size: 38px;
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        min-height:180px;
     }
 
 }
 
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<a href="index.html" class="logo">
-<img src="jessendinho-logo.png" alt="JESSENDINHO">
-</a>
-
-<a href="index.html" class="home">
+</style></head><body><header><a href="index.html" class="logo">
+<img src="jessendinho-logo.png" alt="JESSENDINHO™️">
+</a><a href="index.html" class="home">
 ← Home
-</a>
+</a></header><main class="container"><section class="hero"><h1>Explore</h1><p>
+Discover the different worlds of JESSENDINHO™️ — 
+from football and gaming to entertainment and live events.
+</p></section><div class="grid"><a href="watch.html" class="card"><div class="icon">⚽</div><h2>Football</h2><p>
+Matches • Highlights • Analysis
+</p><span class="arrow">→</span>
 
-</header>
+</a><a href="watch.html" class="card"><div class="icon">🎮</div><h2>Gaming</h2><p>
+Live Gaming • Challenges • Creators
+</p><span class="arrow">→</span>
 
+</a><a href="watch.html" class="card"><div class="icon">🎬</div><h2>Entertainment</h2><p>
+Shows • Stories • Special Content
+</p><span class="arrow">→</span>
 
-<main class="container">
+</a><a href="watch.html" class="card"><div class="icon">🔴</div><h2>Live Events</h2><p>
+Live • Exclusive • Worldwide
+</p><span class="arrow">→</span>
 
-<h1>Explore</h1>
+</a></div></main><footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.
 
-<p class="subtitle">
-Discover the different worlds of JESSENDINHO™️.
-</p>
-
-
-<div class="grid">
-
-
-<a href="watch.html" class="card">
-
-<div class="icon">⚽</div>
-
-<h2>Football</h2>
-
-<p>Matches • Highlights • Analysis</p>
-
-</a>
-
-
-<a href="watch.html" class="card">
-
-<div class="icon">🎮</div>
-
-<h2>Gaming</h2>
-
-<p>Live Gaming • Challenges • Creators</p>
-
-</a>
-
-
-<a href="watch.html" class="card">
-
-<div class="icon">🎬</div>
-
-<h2>Entertainment</h2>
-
-<p>Shows • Stories • Special Content</p>
-
-</a>
-
-
-<a href="watch.html" class="card">
-
-<div class="icon">🔴</div>
-
-<h2>Live Events</h2>
-
-<p>Live • Exclusive • Worldwide</p>
-
-</a>
-
-
-</div>
-
-</main>
-
-
-<footer>
-
-© 2026 JESSENDINHO™️ — Your World. Your Entertainment.
-
-</footer>
-
-</body>
-
+</footer></body>
 </html>
