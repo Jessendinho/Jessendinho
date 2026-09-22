@@ -14,10 +14,9 @@
 }
 
 body{
-  background:#070707;
+  background:#060606;
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
-  line-height:1.5;
 }
 
 a{
@@ -27,498 +26,117 @@ a{
 
 /* HEADER */
 header{
-  height:76px;
+  height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 5%;
-  background:#090909;
+  background:#080808;
   border-bottom:1px solid #202020;
-  position:sticky;
-  top:0;
-  z-index:100;
 }
 
 .logo img{
-  width:52px;
-  height:52px;
+  width:50px;
+  height:50px;
   object-fit:cover;
   display:block;
 }
 
 .watch-button{
   background:#e50914;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:7px;
+  padding:12px 21px;
+  border-radius:6px;
   font-size:13px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.5px;
-  transition:.25s ease;
 }
 
 .watch-button:hover{
   background:#ff1b26;
-  transform:translateY(-2px);
 }
 
 /* HERO */
 .hero{
-  min-height:620px;
+  min-height:560px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:80px 20px;
+  padding:60px 20px 70px;
   background:
-    radial-gradient(circle at center,#1b1b1b 0%,#0b0b0b 42%,#070707 75%);
+    radial-gradient(circle at 50% 35%,#202020 0%,#0b0b0b 38%,#060606 72%);
 }
 
 .hero-content{
-  max-width:1000px;
+  max-width:1050px;
 }
 
-.brand{
-  font-size:clamp(48px,10vw,105px);
+.hero-brand{
+  font-size:clamp(50px,10vw,105px);
   font-weight:1000;
-  letter-spacing:-5px;
-  line-height:.95;
-  margin-bottom:28px;
+  letter-spacing:-6px;
+  line-height:.9;
+  margin-bottom:24px;
 }
 
-.hero h1{
-  font-size:clamp(38px,7vw,76px);
+.hero-title{
+  font-size:clamp(35px,6.5vw,72px);
   font-weight:900;
-  line-height:.98;
   letter-spacing:-3px;
+  line-height:.98;
   text-transform:uppercase;
 }
 
-.hero h1 span{
+.hero-title span{
   color:#e50914;
 }
 
-.hero p{
-  margin:25px auto 35px;
+.hero-text{
   max-width:650px;
+  margin:24px auto 32px;
   color:#999;
-  font-size:17px;
+  font-size:16px;
 }
 
-.hero-buttons{
+.buttons{
   display:flex;
   justify-content:center;
-  gap:14px;
+  gap:12px;
   flex-wrap:wrap;
 }
 
-.primary-button,
-.secondary-button{
-  padding:15px 27px;
-  border-radius:7px;
-  font-weight:800;
-  font-size:14px;
-  transition:.25s ease;
+.primary,
+.secondary{
+  padding:14px 25px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:900;
 }
 
-.primary-button{
+.primary{
   background:#e50914;
 }
 
-.primary-button:hover{
+.primary:hover{
   background:#ff1b26;
-  transform:translateY(-3px);
 }
 
-.secondary-button{
-  border:1px solid #444;
+.secondary{
   background:#151515;
+  border:1px solid #444;
 }
 
-.secondary-button:hover{
+.secondary:hover{
   border-color:#777;
-  transform:translateY(-3px);
 }
 
 /* LIVE */
-.live-section{
+.live{
   width:min(1150px,92%);
-  margin:0 auto;
-  padding:75px 0;
+  margin:auto;
+  padding:65px 0 75px;
 }
 
-.section-label{
+.label{
   color:#e50914;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-  margin-bottom:10px;
-}
-
-.section-title{
-  font-size:42px;
-  font-weight:900;
-  letter-spacing:-2px;
-  margin-bottom:30px;
-}
-
-.live-card{
-  background:linear-gradient(135deg,#181818,#0e0e0e);
-  border:1px solid #292929;
-  border-radius:16px;
-  padding:38px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-}
-
-.live-info h3{
-  font-size:28px;
-  margin-bottom:8px;
-}
-
-.live-info p{
-  color:#888;
-}
-
-.live-indicator{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:15px;
-}
-
-.live-dot{
-  width:9px;
-  height:9px;
-  background:#e50914;
-  border-radius:50%;
-  display:inline-block;
-}
-
-/* WORLDS */
-.worlds{
-  width:min(1150px,92%);
-  margin:0 auto;
-  padding:20px 0 90px;
-}
-
-.world-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.world{
-  min-height:300px;
-  padding:32px;
-  border:1px solid #292929;
-  border-radius:16px;
-  background:linear-gradient(145deg,#181818,#0e0e0e);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  position:relative;
-  overflow:hidden;
-  transition:.3s ease;
-}
-
-.world:hover{
-  transform:translateY(-7px);
-  border-color:#e50914;
-}
-
-.world-icon{
-  position:absolute;
-  top:28px;
-  left:30px;
-  font-size:48px;
-}
-
-.world h3{
-  font-size:29px;
-  margin-bottom:8px;
-}
-
-.world p{
-  color:#888;
-  font-size:14px;
-}
-
-.world-arrow{
-  position:absolute;
-  right:25px;
-  bottom:25px;
-  font-size:25px;
-  color:#666;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid #202020;
-  text-align:center;
-  padding:45px 20px;
-  color:#555;
-  font-size:13px;
-}
-
-.footer-brand{
-  color:#fff;
-  font-weight:900;
-  font-size:18px;
-  margin-bottom:7px;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-  header{
-    height:68px;
-    padding:0 4%;
-  }
-
-  .logo img{
-    width:46px;
-    height:46px;
-  }
-
-  .watch-button{
-    padding:10px 15px;
-    font-size:12px;
-  }
-
-  .hero{
-    min-height:560px;
-    padding:70px 18px;
-  }
-
-  .brand{
-    font-size:55px;
-    letter-spacing:-3px;
-  }
-
-  .hero h1{
-    font-size:42px;
-    letter-spacing:-2px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .live-card{
-    padding:28px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .section-title{
-    font-size:34px;
-  }
-
-  .world-grid{
-    grid-template-columns:1fr;
-  }
-
-  .world{
-    min-height:230px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-
-  <a href="index.html" class="logo">
-    <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
-  </a>
-
-  <a href="watch.html" class="watch-button">
-    WATCH LIVE
-  </a>
-
-</header>
-
-
-<!-- HERO -->
-<section class="hero">
-
-  <div class="hero-content">
-
-    <div class="brand">
-      JESSENDINHO™️
-    </div>
-
-    <h1>
-      YOUR WORLD.<br>
-      <span>YOUR ENTERTAINMENT.</span>
-    </h1>
-
-    <p>
-      Football. Gaming. Entertainment.
-      Discover the world of JESSENDINHO™️.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="watch.html" class="primary-button">
-        🔴 WATCH LIVE
-      </a>
-
-      <a href="explore.html" class="secondary-button">
-        EXPLORE
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- LIVE SECTION -->
-<section class="live-section">
-
-  <div class="section-label">
-    JESSENDINHO LIVE
-  </div>
-
-  <h2 class="section-title">
-    LIVE NOW
-  </h2>
-
-  <div class="live-card">
-
-    <div class="live-info">
-
-      <div class="live-indicator">
-        <span class="live-dot"></span>
-        LIVE
-      </div>
-
-      <h3>
-        JESSENDINHO™️ Live
-      </h3>
-
-      <p>
-        Watch live football, gaming, entertainment
-        and special events.
-      </p>
-
-    </div>
-
-    <a href="watch.html" class="primary-button">
-      WATCH NOW →
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- THREE WORLDS -->
-<section class="worlds">
-
-  <div class="section-label">
-    EXPLORE JESSENDINHO
-  </div>
-
-  <h2 class="section-title">
-    THREE WORLDS.
-  </h2>
-
-  <div class="world-grid">
-
-    <a href="football.html" class="world">
-
-      <div class="world-icon">
-        ⚽
-      </div>
-
-      <h3>
-        Football
-      </h3>
-
-      <p>
-        Matches • Highlights • News • Analysis
-      </p>
-
-      <span class="world-arrow">
-        →
-      </span>
-
-    </a>
-
-
-    <a href="gaming.html" class="world">
-
-      <div class="world-icon">
-        🎮
-      </div>
-
-      <h3>
-        Gaming
-      </h3>
-
-      <p>
-        Gameplay • Tournaments • Creators • Live
-      </p>
-
-      <span class="world-arrow">
-        →
-      </span>
-
-    </a>
-
-
-    <a href="entertainment.html" class="world">
-
-      <div class="world-icon">
-        🎬
-      </div>
-
-      <h3>
-        Entertainment
-      </h3>
-
-      <p>
-        Shows • Stories • Stars • Culture
-      </p>
-
-      <span class="world-arrow">
-        →
-      </span>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-  <div class="footer-brand">
-    JESSENDINHO™️
-  </div>
-
-  <div>
-    Your World. Your Entertainment.
-  </div>
-
-  <br>
-
-  © 2026 JESSENDINHO™️ — All Rights Reserved
-
-</footer>
-
-</body>
-</html>
+  font-size:
