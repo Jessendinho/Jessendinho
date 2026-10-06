@@ -1,154 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JESSENDINHO™️ — Watch Live</title>
+<title>JESSENDINHO™️ — Live</title>
 
 <style>
-
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    margin:0;
-    background:#080808;
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
+  background:#070b10;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  padding-bottom:85px;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 /* HEADER */
-
 header{
-    height:64px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 5%;
-    background:#111;
-    border-bottom:1px solid #222;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  background:#0b1119;
+  border-bottom:1px solid #1d2936;
+  position:sticky;
+  top:0;
+  z-index:20;
 }
 
 .logo img{
-    width:44px;
-    height:44px;
-    object-fit:cover;
-    display:block;
+  width:45px;
+  height:45px;
+  object-fit:cover;
+  display:block;
 }
 
-/* HOME BUTTON */
-
-.home{
-    color:#bbb;
-    text-decoration:none;
-    font-size:14px;
+.header-icon{
+  font-size:28px;
 }
 
-.home:hover{
-    color:#fff;
+/* NOTICE */
+.notice{
+  width:calc(100% - 24px);
+  margin:12px auto;
+  padding:13px 15px;
+  background:#111b27;
+  border:1px solid #26384b;
+  border-radius:9px;
+  color:#b8c4d0;
+  font-size:13px;
+  text-align:center;
 }
 
-/* MAIN */
-
-.container{
-    width:min(1100px,94%);
-    margin:30px auto;
+/* CATEGORIES */
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:6px 12px 15px;
+  scrollbar-width:none;
 }
 
-/* PLAYER */
-
-.player{
-    width:100%;
-    aspect-ratio:16 / 9;
-    background:#000;
-    border:1px solid #222;
-    border-radius:10px;
-    overflow:hidden;
+.categories::-webkit-scrollbar{
+  display:none;
 }
 
-.player iframe{
-    width:100%;
-    height:100%;
-    display:block;
-    border:0;
+.category{
+  flex:0 0 auto;
+  min-width:105px;
+  height:88px;
+  border-radius:15px;
+  background:#121c28;
+  border:1px solid transparent;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
 }
 
-/* LIVE STATUS */
+.category.active{
+  border-color:#3b91d1;
+  background:#16283a;
+}
 
-.live-status{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-top:14px;
-    color:#bbb;
-    font-size:14px;
+.category-icon{
+  font-size:32px;
+}
+
+.category-name{
+  font-size:12px;
+  font-weight:700;
+}
+
+/* FILTERS */
+.filters{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:0 12px 18px;
+  scrollbar-width:none;
+}
+
+.filters::-webkit-scrollbar{
+  display:none;
+}
+
+.filter{
+  flex:0 0 auto;
+  padding:10px 15px;
+  background:#151f2b;
+  border:1px solid #293847;
+  border-radius:9px;
+  font-size:13px;
+  color:#cbd3dc;
+}
+
+.filter.active{
+  border-color:#3b91d1;
+  color:#fff;
+  background:#172b3e;
+}
+
+/* SECTION */
+.section{
+  width:100%;
+  padding:0 12px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:4px 3px 14px;
+}
+
+.section-heading h1{
+  font-size:22px;
+  font-weight:900;
+}
+
+.section-heading span{
+  color:#778595;
+  font-size:12px;
+}
+
+/* EVENT */
+.event{
+  position:relative;
+  margin-bottom:14px;
+  background:#131e2a;
+  border:1px solid #26384a;
+  border-radius:17px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.event:hover{
+  border-color:#3b91d1;
+}
+
+.event-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 15px 8px;
+  color:#8795a5;
+  font-size:11px;
+  font-weight:700;
+}
+
+.event-category{
+  color:#b9c5d0;
+}
+
+.live-label{
+  color:#ff3b55;
+  display:flex;
+  align-items:center;
+  gap:5px;
 }
 
 .live-dot{
-    width:9px;
-    height:9px;
-    background:#e50914;
-    border-radius:50%;
-    display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ff1744;
 }
 
-/* INFO */
-
-.info{
-    padding:25px 0;
+/* GENERAL EVENT */
+.general-event{
+  padding:12px 17px 20px;
 }
 
-h1{
-    margin:0 0 10px;
-    font-size:28px;
+.general-event h2{
+  font-size:21px;
+  margin-bottom:7px;
 }
 
-.description{
-    color:#aaa;
-    line-height:1.6;
-    max-width:750px;
+.general-event p{
+  color:#82909f;
+  font-size:13px;
+  margin-bottom:18px;
 }
 
-/* FOOTER */
-
-footer{
-    text-align:center;
-    color:#666;
-    padding:40px 20px;
-    border-top:1px solid #222;
-    margin-top:30px;
+.watch-now{
+  display:inline-block;
+  background:#e50914;
+  padding:10px 17px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:900;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header{
-        padding:0 4%;
-    }
-
-    .container{
-        width:94%;
-        margin:20px auto;
-    }
-
-    h1{
-        font-size:23px;
-    }
-
-    .description{
-        font-size:14px;
-    }
-
-    .live-status{
-        font-size:13px;
-    }
-
+/* FOOTBALL */
+.match{
+  display:grid;
+  grid-template-columns:1fr 55px 1fr;
+  align-items:center;
+  padding:12px 16px 20px;
+  text-align:center;
 }
 
+.team{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  font-size:15px;
+  font-weight:700;
+}
+
+.team-icon{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#1c2937;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+}
+
+.match-status{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  color:#ff4160;
+  font-size:10px;
+}
+
+.live-wave{
+  font-size:19px;
+}
+
+/* PLAYER */
+.player-section{
+  margin:22px 12px;
+  display:none;
+}
+
+.player-section.show{
+  display:block;
+}
+
+.player{
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #26384a;
+}
+
+.player iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.player-title{
+  margin-top:12px;
+  font-size:16px;
+  font-weight:800;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:76px;
+  background:#101925;
+  border-top:1px solid #263545;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  z-index:50;
+  box-shadow:0 -8px 25px rgba(0,0,0,.35);
+}
+
+.nav-item{
+  width:25%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  color:#aab5c0;
+  font-size:10px;
+}
+
+.nav-icon{
+  font-size:22px;
+}
+
+.nav-item.active{
+  color:#4da9ef;
+}
+
+/* DESKTOP */
+@media(min-width:800px){
+
+  body{
+    padding-bottom:0;
+  }
+
+  header{
+    padding:0 5%;
+  }
+
+  .categories,
+  .filters,
+  .section{
+    width:min(1100px,94%);
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .categories{
+    padding-top:25px;
+  }
+
+  .category{
+    min-width:145px;
+    height:100px;
+  }
+
+  .bottom-nav{
+    display:none;
+  }
+
+  .notice{
+    max-width:1100px;
+  }
+}
 </style>
 </head>
 
@@ -156,66 +375,300 @@ footer{
 
 <header>
 
-    <a href="index.html" class="logo">
-        <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
-    </a>
+  <a href="index.html" class="logo">
+    <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
+  </a>
 
-    <a href="index.html" class="home">
-        ← Home
-    </a>
+  <div class="header-icon">⌕</div>
 
 </header>
 
 
-<main class="container">
-
-    <!-- LIVE PLAYER -->
-
-    <div class="player">
-
-        <iframe
-            src="https://owncast-rq1yq-u78472.vm.elestio.app/embed/video"
-            allowfullscreen>
-        </iframe>
-
-    </div>
+<div class="notice">
+  🔴 JESSENDINHO™️ LIVE — Your World. Your Entertainment.
+</div>
 
 
-    <!-- STREAM STATUS -->
+<!-- CATEGORIES -->
 
-    <div class="live-status">
+<div class="categories">
 
+  <a href="#" class="category active">
+    <div class="category-icon">◉</div>
+    <div class="category-name">ALL</div>
+  </a>
+
+  <a href="football.html" class="category">
+    <div class="category-icon">⚽</div>
+    <div class="category-name">FOOTBALL</div>
+  </a>
+
+  <a href="gaming.html" class="category">
+    <div class="category-icon">🎮</div>
+    <div class="category-name">GAMING</div>
+  </a>
+
+  <a href="entertainment.html" class="category">
+    <div class="category-icon">🎬</div>
+    <div class="category-name">ENTERTAINMENT</div>
+  </a>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+  <div class="filter active">
+    ✓ ALL (4)
+  </div>
+
+  <div class="filter">
+    ◉ LIVE (1)
+  </div>
+
+  <div class="filter">
+    ◷ UPCOMING (2)
+  </div>
+
+  <div class="filter">
+    ✓ RECENT (1)
+  </div>
+
+</div>
+
+
+<!-- EVENTS -->
+
+<section class="section">
+
+  <div class="section-heading">
+    <h1>Live Events</h1>
+    <span>JESSENDINHO™️</span>
+  </div>
+
+
+  <!-- LIVE EVENT -->
+
+  <div class="event">
+
+    <div class="event-top">
+
+      <span class="event-category">
+        🔴 JESSENDINHO LIVE
+      </span>
+
+      <span class="live-label">
         <span class="live-dot"></span>
-
-        <strong>JESSENDINHO™️ Live</strong>
+        LIVE
+      </span>
 
     </div>
 
+    <div class="general-event">
 
-    <!-- INFORMATION -->
+      <h2>JESSENDINHO™️ Live</h2>
 
-    <section class="info">
+      <p>
+        Football • Gaming • Entertainment • Special Events
+      </p>
 
-        <h1>
-            JESSENDINHO™️ Live
-        </h1>
+      <a href="#player" class="watch-now" onclick="showPlayer()">
+        WATCH LIVE →
+      </a>
 
-        <p class="description">
-            Welcome to the official JESSENDINHO™️ live streaming experience.
-            Watch football, gaming, entertainment and special events — all in one place.
-        </p>
+    </div>
 
-    </section>
-
-</main>
+  </div>
 
 
-<footer>
+  <!-- FOOTBALL EVENT -->
 
-    © 2026 JESSENDINHO™️ — All Rights Reserved
+  <div class="event">
 
-</footer>
+    <div class="event-top">
+
+      <span class="event-category">
+        ⚽ FOOTBALL
+      </span>
+
+      <span>
+        UPCOMING
+      </span>
+
+    </div>
+
+    <div class="match">
+
+      <div class="team">
+
+        <div class="team-icon">🇰🇪</div>
+
+        <span>Team A</span>
+
+      </div>
+
+      <div class="match-status">
+
+        <span>VS</span>
+        <span>20:00</span>
+
+      </div>
+
+      <div class="team">
+
+        <div class="team-icon">🇺🇬</div>
+
+        <span>Team B</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- GAMING EVENT -->
+
+  <div class="event">
+
+    <div class="event-top">
+
+      <span class="event-category">
+        🎮 GAMING
+      </span>
+
+      <span>
+        UPCOMING
+      </span>
+
+    </div>
+
+    <div class="general-event">
+
+      <h2>JESSENDINHO Gaming</h2>
+
+      <p>
+        Tournaments • Gameplay • Challenges
+      </p>
+
+      <a href="#" class="watch-now">
+        EVENT DETAILS →
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ENTERTAINMENT EVENT -->
+
+  <div class="event">
+
+    <div class="event-top">
+
+      <span class="event-category">
+        🎬 ENTERTAINMENT
+      </span>
+
+      <span>
+        RECENT
+      </span>
+
+    </div>
+
+    <div class="general-event">
+
+      <h2>JESSENDINHO Entertainment</h2>
+
+      <p>
+        Shows • Stories • Stars • Culture
+      </p>
+
+      <a href="#" class="watch-now">
+        EXPLORE →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PLAYER -->
+
+<section class="player-section" id="player">
+
+  <div class="player">
+
+    <iframe
+      src="https://owncast-rq1yq-u78472.vm.elestio.app/embed/video"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <div class="player-title">
+    🔴 JESSENDINHO™️ Live
+  </div>
+
+</section>
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+  <a href="index.html" class="nav-item">
+
+    <div class="nav-icon">⌂</div>
+    <div>Home</div>
+
+  </a>
+
+  <a href="watch.html" class="nav-item active">
+
+    <div class="nav-icon">◉</div>
+    <div>Live</div>
+
+  </a>
+
+  <a href="explore.html" class="nav-item">
+
+    <div class="nav-icon">◈</div>
+    <div>Explore</div>
+
+  </a>
+
+  <a href="entertainment.html" class="nav-item">
+
+    <div class="nav-icon">✦</div>
+    <div>Highlights</div>
+
+  </a>
+
+</nav>
+
+
+<script>
+
+function showPlayer(){
+
+  document.getElementById("player").classList.add("show");
+
+  setTimeout(function(){
+
+    document.getElementById("player").scrollIntoView({
+      behavior:"smooth"
+    });
+
+  },100);
+
+}
+
+</script>
 
 </body>
-
-</html>
+    </html>
