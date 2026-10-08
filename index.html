@@ -96,6 +96,7 @@ header{
   margin:24px auto 32px;
   color:#999;
   font-size:16px;
+  line-height:1.6;
 }
 
 .buttons{
@@ -139,4 +140,346 @@ header{
 
 .label{
   color:#e50914;
-  font-size:
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  margin-bottom:12px;
+}
+
+.live-box{
+  background:#111;
+  border:1px solid #292929;
+  border-radius:14px;
+  padding:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.live-info h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.live-info p{
+  color:#888;
+  line-height:1.5;
+  max-width:650px;
+}
+
+.live-action{
+  flex-shrink:0;
+  background:#e50914;
+  padding:14px 22px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.live-action:hover{
+  background:#ff1b26;
+}
+
+/* WORLDS */
+.worlds{
+  width:min(1150px,92%);
+  margin:auto;
+  padding:10px 0 80px;
+}
+
+.section-title{
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:25px;
+}
+
+.world-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.world{
+  min-height:220px;
+  padding:28px;
+  background:
+    linear-gradient(145deg,#181818,#0d0d0d);
+  border:1px solid #292929;
+  border-radius:14px;
+  position:relative;
+  overflow:hidden;
+  transition:.25s;
+}
+
+.world:hover{
+  transform:translateY(-5px);
+  border-color:#e50914;
+}
+
+.world-icon{
+  font-size:42px;
+  margin-bottom:25px;
+}
+
+.world h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.world p{
+  color:#888;
+  line-height:1.5;
+}
+
+.world-arrow{
+  position:absolute;
+  right:25px;
+  bottom:22px;
+  font-size:22px;
+  color:#666;
+}
+
+.world:hover .world-arrow{
+  color:#e50914;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid #202020;
+  padding:40px 20px;
+  text-align:center;
+  color:#666;
+  font-size:12px;
+}
+
+footer strong{
+  color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  header{
+    padding:0 18px;
+  }
+
+  .hero{
+    min-height:500px;
+    padding:55px 18px;
+  }
+
+  .hero-brand{
+    letter-spacing:-4px;
+  }
+
+  .hero-text{
+    font-size:14px;
+  }
+
+  .live{
+    padding:45px 0 55px;
+  }
+
+  .live-box{
+    display:block;
+    padding:24px;
+  }
+
+  .live-info h2{
+    font-size:24px;
+  }
+
+  .live-action{
+    display:inline-block;
+    margin-top:22px;
+  }
+
+  .world-grid{
+    grid-template-columns:1fr;
+  }
+
+  .world{
+    min-height:180px;
+  }
+
+  .section-title{
+    font-size:27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <a href="index.html" class="logo">
+    <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
+  </a>
+
+  <a href="watch.html" class="watch-button">
+    WATCH LIVE
+  </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-brand">
+      JESSENDINHO™️
+    </div>
+
+    <h1 class="hero-title">
+      YOUR WORLD.<br>
+      YOUR <span>ENTERTAINMENT.</span>
+    </h1>
+
+    <p class="hero-text">
+      Football, gaming, entertainment and live events —
+      all brought together in one digital world.
+    </p>
+
+    <div class="buttons">
+
+      <a href="watch.html" class="primary">
+        WATCH LIVE →
+      </a>
+
+      <a href="explore.html" class="secondary">
+        EXPLORE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LIVE -->
+
+<section class="live">
+
+  <div class="label">
+    ● LIVE NOW
+  </div>
+
+  <div class="live-box">
+
+    <div class="live-info">
+
+      <h2>
+        JESSENDINHO™️ Live
+      </h2>
+
+      <p>
+        Football • Gaming • Entertainment • Special Events
+      </p>
+
+    </div>
+
+    <a href="watch.html" class="live-action">
+      WATCH NOW →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- WORLDS -->
+
+<section class="worlds">
+
+  <h2 class="section-title">
+    Explore Your World
+  </h2>
+
+  <div class="world-grid">
+
+    <a href="football.html" class="world">
+
+      <div class="world-icon">
+        ⚽
+      </div>
+
+      <h3>
+        Football
+      </h3>
+
+      <p>
+        Matches, highlights, analysis and football events.
+      </p>
+
+      <div class="world-arrow">
+        →
+      </div>
+
+    </a>
+
+
+    <a href="gaming.html" class="world">
+
+      <div class="world-icon">
+        🎮
+      </div>
+
+      <h3>
+        Gaming
+      </h3>
+
+      <p>
+        Gameplay, tournaments, challenges and creators.
+      </p>
+
+      <div class="world-arrow">
+        →
+      </div>
+
+    </a>
+
+
+    <a href="entertainment.html" class="world">
+
+      <div class="world-icon">
+        🎬
+      </div>
+
+      <h3>
+        Entertainment
+      </h3>
+
+      <p>
+        Shows, stories, culture and special content.
+      </p>
+
+      <div class="world-arrow">
+        →
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 <strong>JESSENDINHO™️</strong> —
+  Your World. Your Entertainment.
+
+</footer>
+
+</body>
+</html>
