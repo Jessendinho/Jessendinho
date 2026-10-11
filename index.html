@@ -1,141 +1,658 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#070a12">
-  <meta name="description" content="Discover football, gaming and entertainment on JESSENDINHO.">
-  <title>Home · JESSENDINHO™️</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <meta name="theme-color" content="#050b15">
+  <meta name="description" content="Football, gaming and entertainment — all in one place on JESSENDINHO.">
+  <title>Home | JESSENDINHO™</title>
+
+  <style>
+    :root {
+      --bg: #050b15;
+      --panel: #091426;
+      --panel2: #0d1b30;
+      --red: #ff1748;
+      --blue: #16baff;
+      --white: #f6f8fc;
+      --muted: #a7b4c8;
+      --border: #174365;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, #10223b 0, transparent 45%),
+        var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 88px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .topbar {
+      height: 64px;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(5, 11, 21, .96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -.5px;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 37px;
+      height: 37px;
+      object-fit: contain;
+    }
+
+    .brand-name { font-size: 19px; }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2.6vw, 32px);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .desktop-nav a { color: #d9e2f0; }
+    .desktop-nav a:first-child { color: var(--red); }
+
+    .desktop-nav a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      padding: 50px 5%;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, #050b15 0%, rgba(5,11,21,.97) 27%,
+        rgba(5,11,21,.65) 56%, rgba(5,11,21,.18) 100%),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1800&q=85")
+        center 48% / cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 570px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: #b7d5ed;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(36px, 5.5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+    }
+
+    .accent { color: var(--red); }
+
+    .hero-copy {
+      max-width: 450px;
+      color: #d0d9e7;
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      min-height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 17px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid var(--blue);
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .btn-secondary { background: rgba(5,11,21,.72); }
+
+    .notice {
+      margin: 20px 5% 30px;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(110deg, #0b1a2c, #07111f);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .notice-icon {
+      flex: 0 0 39px;
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      background: #301126;
+      border: 1px solid var(--red);
+      border-radius: 50%;
+      color: var(--red);
+      font-size: 22px;
+    }
+
+    .notice strong { font-size: 14px; }
+    .notice p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+
+    .section { padding: 0 5%; margin: 30px 0; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      margin: 4px 0 0;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: -.6px;
+    }
+
+    .section-heading p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .view-all {
+      color: #c4eaff;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .category {
+      min-height: 185px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 17px;
+      background-size: cover;
+      background-position: center;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+      border-color: var(--red);
+    }
+
+    .category::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(2,7,15,.98), rgba(2,7,15,.03) 100%);
+    }
+
+    .category > * { position: relative; }
+
+    .football {
+      background-image: url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .gaming {
+      background-image: url("https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .entertainment {
+      background-image: url("https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .category-icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #eaf4ff;
+      border-radius: 50%;
+      background: rgba(5,11,21,.6);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .category h3 { margin: 0; font-size: 21px; }
+    .category p { margin: 3px 0 0; font-size: 12px; color: #d0d9e7; }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .event {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .event-art {
+      height: 130px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .event-art::after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      background: linear-gradient(transparent, #091426);
+    }
+
+    .event-football {
+      background-image: url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .event-gaming {
+      background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .event-music {
+      background-image: url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .event-body { padding: 14px; }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 20px;
+      background: #182b42;
+      color: #d9eaff;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .tag-red { background: #571128; color: #ff7794; }
+    .tag-blue { background: #102c54; color: #8dcaff; }
+
+    .event h3 { font-size: 15px; margin: 10px 0 5px; }
+    .event p { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+
+    .event .btn { width: 100%; min-height: 38px; font-size: 11px; }
+
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .popular-card {
+      min-width: 0;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .popular-card img {
+      display: block;
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    .popular-info { padding: 10px; }
+    .popular-info small { color: var(--muted); font-size: 10px; }
+    .popular-info strong { display: block; font-size: 12px; margin-top: 3px; }
+
+    .brand-banner {
+      margin: 35px 5%;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background:
+        linear-gradient(90deg, #09172a 10%, rgba(9,23,42,.85)),
+        url("https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80")
+        center / cover;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-banner h2 { margin: 0; font-size: 23px; }
+    .brand-banner p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .banner-slogan { color: #ff7592; font-size: 19px; font-weight: 900; }
+
+    .footer {
+      padding: 20px 5%;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-around;
+      padding: 9px 5px calc(9px + env(safe-area-inset-bottom));
+      background: rgba(5,11,21,.97);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    .bottom-nav a {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: #b5c2d4;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .bottom-nav .active { color: var(--red); }
+    .nav-icon { font-size: 20px; line-height: 1.2; }
+
+    @media (min-width: 1200px) {
+      .hero { padding-left: max(5%, calc((100% - 1400px) / 2)); }
+      .section { padding-left: max(5%, calc((100% - 1400px) / 2)); padding-right: max(5%, calc((100% - 1400px) / 2)); }
+    }
+
+    @media (max-width: 700px) {
+      .topbar { height: 58px; padding: 0 16px; }
+      .brand img { width: 32px; height: 32px; }
+      .brand-name { font-size: 15px; }
+      .desktop-nav { gap: 12px; font-size: 11px; }
+      .desktop-nav a:nth-child(3) { display: none; }
+
+      .hero {
+        min-height: 380px;
+        padding: 38px 20px;
+        background-position: 58% center;
+        background-image:
+          linear-gradient(90deg, rgba(5,11,21,.97), rgba(5,11,21,.75) 58%, rgba(5,11,21,.32)),
+          url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80");
+      }
+
+      h1 { font-size: 43px; }
+      .hero-copy { font-size: 14px; }
+      .section { padding: 0 16px; margin: 27px 0; }
+      .notice { margin: 16px; padding: 13px; }
+      .notice p { font-size: 11px; }
+
+      .category-grid { gap: 9px; }
+      .category { min-height: 155px; padding: 10px; }
+      .category h3 { font-size: 16px; }
+      .category p { font-size: 10px; }
+      .category-icon { width: 32px; height: 32px; font-size: 17px; }
+
+      .event-grid { grid-template-columns: 1fr; }
+      .event { display: grid; grid-template-columns: 112px minmax(0, 1fr); }
+      .event-art { height: 100%; min-height: 155px; }
+      .event-body { padding: 12px; }
+      .event h3 { font-size: 14px; }
+      .event p { font-size: 11px; }
+
+      .popular-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 11px;
+        padding-bottom: 8px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .popular-card { flex: 0 0 155px; scroll-snap-align: start; }
+      .popular-card img { height: 95px; }
+      .brand-banner { margin: 25px 16px; padding: 18px; }
+      .banner-slogan { display: none; }
+    }
+
+    @media (max-width: 390px) {
+      .desktop-nav { gap: 9px; }
+      .desktop-nav a { font-size: 10px; }
+      .category { min-height: 140px; }
+      .category h3 { font-size: 14px; }
+      .actions .btn { padding: 10px 12px; font-size: 11px; }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="siteHeader"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="JESSENDINHO home">
+      <img src="jessendinho-logo.png" alt="">
+      <span class="brand-name">JESSENDINHO™</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="watch.html">Live Events</a>
+      <a href="explore.html">Categories</a>
+      <a href="highlights.html">Highlights</a>
+    </nav>
+  </header>
 
   <main>
     <section class="hero">
       <div class="hero-content">
         <div class="eyebrow">Your world. Your entertainment.</div>
-
-        <h1>Discover what’s<br>happening next.</h1>
-
-        <p class="lead">
-          One destination for live events, football, gaming and entertainment.
-          Find the event, explore the category and watch when a verified stream
-          is available.
+        <h1>Discover what's<br>happening <span class="accent">next.</span></h1>
+        <p class="hero-copy">
+          Football, gaming and entertainment — all in one place.
+          Find your favourite content and never miss a moment.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="watch.html">
-            ◉ Explore Live Events
-          </a>
-
-          <a class="btn btn-secondary" href="explore.html">
-            ▦ Browse Categories
-          </a>
+        <div class="actions">
+          <a class="btn btn-primary" href="watch.html">◉ Explore Live Events →</a>
+          <a class="btn btn-secondary" href="explore.html">▦ Browse Categories</a>
         </div>
       </div>
     </section>
 
-    <div class="notice">
-      <span class="notice-icon" aria-hidden="true">ⓘ</span>
-
+    <aside class="notice">
+      <span class="notice-icon" aria-hidden="true">ϟ</span>
       <div>
         <strong>Live means live.</strong>
-
         <p>
-          Event listings may include clearly marked examples while the
-          catalogue is being set up. A stream is not labelled LIVE unless
-          its availability has been verified.
+          Event examples may be displayed while the catalogue is being set up.
+          A stream is not labelled LIVE unless its availability is verified.
         </p>
       </div>
-    </div>
+    </aside>
 
     <section class="section">
-      <div class="section-head">
+      <div class="section-heading">
         <div>
-          <div class="eyebrow">Choose your world</div>
-          <h2>Explore categories</h2>
-          <p>Jump straight into what you love.</p>
+          <div class="eyebrow">Explore categories</div>
+          <h2>Choose your world</h2>
+          <p>Football, gaming and entertainment — each with its own vibe.</p>
         </div>
-
-        <a class="btn btn-secondary" href="explore.html">
-          All categories →
-        </a>
+        <a class="view-all" href="explore.html">View all →</a>
       </div>
 
-      <div class="category-row">
-        <a class="category-tile" href="football.html">
-          <span class="tile-icon">⚽</span>
-          <span>
-            <strong>Football</strong><br>
-            <small>Matches &amp; stories</small>
-          </span>
+      <div class="category-grid">
+        <a class="category football" href="football.html">
+          <span class="category-icon">⚽</span>
+          <h3>Football</h3>
+          <p>Matches, news and more.</p>
         </a>
 
-        <a class="category-tile" href="gaming.html">
-          <span class="tile-icon">🎮</span>
-          <span>
-            <strong>Gaming</strong><br>
-            <small>Play &amp; compete</small>
-          </span>
+        <a class="category gaming" href="gaming.html">
+          <span class="category-icon">🎮</span>
+          <h3>Gaming</h3>
+          <p>Tournaments, streams and more.</p>
         </a>
 
-        <a class="category-tile" href="entertainment.html">
-          <span class="tile-icon">🎬</span>
-          <span>
-            <strong>Entertainment</strong><br>
-            <small>Shows &amp; culture</small>
-          </span>
+        <a class="category entertainment" href="entertainment.html">
+          <span class="category-icon">🎬</span>
+          <h3>Entertainment</h3>
+          <p>Shows, movies and more.</p>
         </a>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-head">
+      <div class="section-heading">
         <div>
-          <div class="eyebrow">Keep watching</div>
-          <h2>Made for the moments</h2>
+          <div class="eyebrow">Featured live events</div>
+          <h2>Live right now</h2>
+          <p>Don't miss what's happening live.</p>
+        </div>
+        <a class="view-all" href="watch.html">View all events →</a>
+      </div>
+
+      <div class="event-grid">
+        <article class="event">
+          <div class="event-art event-football"></div>
+          <div class="event-body">
+            <span class="tag tag-red">Football · Example</span>
+            <h3>Football Matchday</h3>
+            <p>Illustrative listing. No live stream is confirmed.</p>
+            <a class="btn btn-secondary" href="watch.html">Browse events →</a>
+          </div>
+        </article>
+
+        <article class="event">
+          <div class="event-art event-gaming"></div>
+          <div class="event-body">
+            <span class="tag tag-blue">Gaming · Example</span>
+            <h3>Esports Showcase</h3>
+            <p>Explore gaming content and event updates.</p>
+            <a class="btn btn-secondary" href="gaming.html">Explore gaming →</a>
+          </div>
+        </article>
+
+        <article class="event">
+          <div class="event-art event-music"></div>
+          <div class="event-body">
+            <span class="tag">Entertainment</span>
+            <h3>Entertainment Spotlight</h3>
+            <p>Discover shows, performances and culture.</p>
+            <a class="btn btn-secondary" href="entertainment.html">Explore more →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Discover more</div>
+          <h2>Popular categories</h2>
+          <p>Pick a category and explore more.</p>
         </div>
       </div>
 
-      <div class="content-grid">
-        <a class="content-card" href="watch.html">
-          <div class="content-art">📡</div>
-
-          <div class="content-body">
-            <h3>Live Events</h3>
-
-            <p>
-              Browse by category and event status.
-            </p>
-
-            <span class="btn btn-primary">
-              Browse events →
-            </span>
-          </div>
+      <div class="popular-grid">
+        <a class="popular-card" href="football.html">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=400&q=75" alt="Football on a pitch" loading="lazy">
+          <div class="popular-info"><small>Football</small><strong>Matches &amp; stories</strong></div>
         </a>
 
-        <a class="content-card" href="highlights.html">
-          <div class="content-art">▶</div>
+        <a class="popular-card" href="gaming.html">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&q=75" alt="Gaming tournament" loading="lazy">
+          <div class="popular-info"><small>Gaming</small><strong>Esports &amp; gaming</strong></div>
+        </a>
 
-          <div class="content-body">
-            <h3>Highlights</h3>
+        <a class="popular-card" href="entertainment.html">
+          <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=400&q=75" alt="Live music performance" loading="lazy">
+          <div class="popular-info"><small>Entertainment</small><strong>Shows &amp; culture</strong></div>
+        </a>
 
-            <p>
-              Find featured clips when real content is published.
-            </p>
+        <a class="popular-card" href="watch.html">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=75" alt="Stadium" loading="lazy">
+          <div class="popular-info"><small>Events</small><strong>Browse events</strong></div>
+        </a>
 
-            <span class="btn btn-secondary">
-              Explore highlights →
-            </span>
-          </div>
+        <a class="popular-card" href="highlights.html">
+          <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=400&q=75" alt="Gaming setup" loading="lazy">
+          <div class="popular-info"><small>Highlights</small><strong>Featured clips</strong></div>
         </a>
       </div>
+    </section>
+
+    <section class="brand-banner">
+      <div class="brand">
+        <img src="jessendinho-logo.png" alt="">
+        <div>
+          <h2>JESSENDINHO™</h2>
+          <p>Football. Gaming. Entertainment.</p>
+        </div>
+      </div>
+      <div class="banner-slogan">More than just streaming.</div>
     </section>
   </main>
 
-  <footer class="footer" id="siteFooter"></footer>
+  <footer class="footer">
+    JESSENDINHO™ · Your World. Your Entertainment.
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a class="active" href="index.html"><span class="nav-icon">⌂</span>Home</a>
+    <a href="watch.html"><span class="nav-icon">◉</span>Live Events</a>
+    <a href="explore.html"><span class="nav-icon">▦</span>Categories</a>
+    <a href="highlights.html"><span class="nav-icon">▷</span>Highlights</a>
+  </nav>
 </body>
 </html>
