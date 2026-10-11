@@ -1,485 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JESSENDINHO™️ — Your World. Your Entertainment.</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  background:#060606;
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-/* HEADER */
-header{
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 5%;
-  background:#080808;
-  border-bottom:1px solid #202020;
-}
-
-.logo img{
-  width:50px;
-  height:50px;
-  object-fit:cover;
-  display:block;
-}
-
-.watch-button{
-  background:#e50914;
-  padding:12px 21px;
-  border-radius:6px;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.5px;
-}
-
-.watch-button:hover{
-  background:#ff1b26;
-}
-
-/* HERO */
-.hero{
-  min-height:560px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:60px 20px 70px;
-  background:
-    radial-gradient(circle at 50% 35%,#202020 0%,#0b0b0b 38%,#060606 72%);
-}
-
-.hero-content{
-  max-width:1050px;
-}
-
-.hero-brand{
-  font-size:clamp(50px,10vw,105px);
-  font-weight:1000;
-  letter-spacing:-6px;
-  line-height:.9;
-  margin-bottom:24px;
-}
-
-.hero-title{
-  font-size:clamp(35px,6.5vw,72px);
-  font-weight:900;
-  letter-spacing:-3px;
-  line-height:.98;
-  text-transform:uppercase;
-}
-
-.hero-title span{
-  color:#e50914;
-}
-
-.hero-text{
-  max-width:650px;
-  margin:24px auto 32px;
-  color:#999;
-  font-size:16px;
-  line-height:1.6;
-}
-
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.primary,
-.secondary{
-  padding:14px 25px;
-  border-radius:6px;
-  font-size:13px;
-  font-weight:900;
-}
-
-.primary{
-  background:#e50914;
-}
-
-.primary:hover{
-  background:#ff1b26;
-}
-
-.secondary{
-  background:#151515;
-  border:1px solid #444;
-}
-
-.secondary:hover{
-  border-color:#777;
-}
-
-/* LIVE */
-.live{
-  width:min(1150px,92%);
-  margin:auto;
-  padding:65px 0 75px;
-}
-
-.label{
-  color:#e50914;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1.5px;
-  margin-bottom:12px;
-}
-
-.live-box{
-  background:#111;
-  border:1px solid #292929;
-  border-radius:14px;
-  padding:30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-}
-
-.live-info h2{
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-.live-info p{
-  color:#888;
-  line-height:1.5;
-  max-width:650px;
-}
-
-.live-action{
-  flex-shrink:0;
-  background:#e50914;
-  padding:14px 22px;
-  border-radius:6px;
-  font-size:12px;
-  font-weight:900;
-}
-
-.live-action:hover{
-  background:#ff1b26;
-}
-
-/* WORLDS */
-.worlds{
-  width:min(1150px,92%);
-  margin:auto;
-  padding:10px 0 80px;
-}
-
-.section-title{
-  font-size:32px;
-  font-weight:900;
-  margin-bottom:25px;
-}
-
-.world-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.world{
-  min-height:220px;
-  padding:28px;
-  background:
-    linear-gradient(145deg,#181818,#0d0d0d);
-  border:1px solid #292929;
-  border-radius:14px;
-  position:relative;
-  overflow:hidden;
-  transition:.25s;
-}
-
-.world:hover{
-  transform:translateY(-5px);
-  border-color:#e50914;
-}
-
-.world-icon{
-  font-size:42px;
-  margin-bottom:25px;
-}
-
-.world h3{
-  font-size:24px;
-  margin-bottom:10px;
-}
-
-.world p{
-  color:#888;
-  line-height:1.5;
-}
-
-.world-arrow{
-  position:absolute;
-  right:25px;
-  bottom:22px;
-  font-size:22px;
-  color:#666;
-}
-
-.world:hover .world-arrow{
-  color:#e50914;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid #202020;
-  padding:40px 20px;
-  text-align:center;
-  color:#666;
-  font-size:12px;
-}
-
-footer strong{
-  color:#aaa;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
-  header{
-    padding:0 18px;
-  }
-
-  .hero{
-    min-height:500px;
-    padding:55px 18px;
-  }
-
-  .hero-brand{
-    letter-spacing:-4px;
-  }
-
-  .hero-text{
-    font-size:14px;
-  }
-
-  .live{
-    padding:45px 0 55px;
-  }
-
-  .live-box{
-    display:block;
-    padding:24px;
-  }
-
-  .live-info h2{
-    font-size:24px;
-  }
-
-  .live-action{
-    display:inline-block;
-    margin-top:22px;
-  }
-
-  .world-grid{
-    grid-template-columns:1fr;
-  }
-
-  .world{
-    min-height:180px;
-  }
-
-  .section-title{
-    font-size:27px;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070a12">
+  <meta name="description" content="Discover football, gaming and entertainment on JESSENDINHO.">
+  <title>Home · JESSENDINHO™️</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 
 <body>
+  <div id="siteHeader"></div>
 
-<!-- HEADER -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Your world. Your entertainment.</div>
 
-<header>
+        <h1>Discover what’s<br>happening next.</h1>
 
-  <a href="index.html" class="logo">
-    <img src="jessendinho-logo.png" alt="JESSENDINHO™️">
-  </a>
+        <p class="lead">
+          One destination for live events, football, gaming and entertainment.
+          Find the event, explore the category and watch when a verified stream
+          is available.
+        </p>
 
-  <a href="watch.html" class="watch-button">
-    WATCH LIVE
-  </a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="watch.html">
+            ◉ Explore Live Events
+          </a>
 
-</header>
+          <a class="btn btn-secondary" href="explore.html">
+            ▦ Browse Categories
+          </a>
+        </div>
+      </div>
+    </section>
 
+    <div class="notice">
+      <span class="notice-icon" aria-hidden="true">ⓘ</span>
 
-<!-- HERO -->
+      <div>
+        <strong>Live means live.</strong>
 
-<section class="hero">
-
-  <div class="hero-content">
-
-    <div class="hero-brand">
-      JESSENDINHO™️
+        <p>
+          Event listings may include clearly marked examples while the
+          catalogue is being set up. A stream is not labelled LIVE unless
+          its availability has been verified.
+        </p>
+      </div>
     </div>
 
-    <h1 class="hero-title">
-      YOUR WORLD.<br>
-      YOUR <span>ENTERTAINMENT.</span>
-    </h1>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Choose your world</div>
+          <h2>Explore categories</h2>
+          <p>Jump straight into what you love.</p>
+        </div>
 
-    <p class="hero-text">
-      Football, gaming, entertainment and live events —
-      all brought together in one digital world.
-    </p>
-
-    <div class="buttons">
-
-      <a href="watch.html" class="primary">
-        WATCH LIVE →
-      </a>
-
-      <a href="explore.html" class="secondary">
-        EXPLORE
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- LIVE -->
-
-<section class="live">
-
-  <div class="label">
-    ● LIVE NOW
-  </div>
-
-  <div class="live-box">
-
-    <div class="live-info">
-
-      <h2>
-        JESSENDINHO™️ Live
-      </h2>
-
-      <p>
-        Football • Gaming • Entertainment • Special Events
-      </p>
-
-    </div>
-
-    <a href="watch.html" class="live-action">
-      WATCH NOW →
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- WORLDS -->
-
-<section class="worlds">
-
-  <h2 class="section-title">
-    Explore Your World
-  </h2>
-
-  <div class="world-grid">
-
-    <a href="football.html" class="world">
-
-      <div class="world-icon">
-        ⚽
+        <a class="btn btn-secondary" href="explore.html">
+          All categories →
+        </a>
       </div>
 
-      <h3>
-        Football
-      </h3>
+      <div class="category-row">
+        <a class="category-tile" href="football.html">
+          <span class="tile-icon">⚽</span>
+          <span>
+            <strong>Football</strong><br>
+            <small>Matches &amp; stories</small>
+          </span>
+        </a>
 
-      <p>
-        Matches, highlights, analysis and football events.
-      </p>
+        <a class="category-tile" href="gaming.html">
+          <span class="tile-icon">🎮</span>
+          <span>
+            <strong>Gaming</strong><br>
+            <small>Play &amp; compete</small>
+          </span>
+        </a>
 
-      <div class="world-arrow">
-        →
+        <a class="category-tile" href="entertainment.html">
+          <span class="tile-icon">🎬</span>
+          <span>
+            <strong>Entertainment</strong><br>
+            <small>Shows &amp; culture</small>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Keep watching</div>
+          <h2>Made for the moments</h2>
+        </div>
       </div>
 
-    </a>
+      <div class="content-grid">
+        <a class="content-card" href="watch.html">
+          <div class="content-art">📡</div>
 
+          <div class="content-body">
+            <h3>Live Events</h3>
 
-    <a href="gaming.html" class="world">
+            <p>
+              Browse by category and event status.
+            </p>
 
-      <div class="world-icon">
-        🎮
+            <span class="btn btn-primary">
+              Browse events →
+            </span>
+          </div>
+        </a>
+
+        <a class="content-card" href="highlights.html">
+          <div class="content-art">▶</div>
+
+          <div class="content-body">
+            <h3>Highlights</h3>
+
+            <p>
+              Find featured clips when real content is published.
+            </p>
+
+            <span class="btn btn-secondary">
+              Explore highlights →
+            </span>
+          </div>
+        </a>
       </div>
+    </section>
+  </main>
 
-      <h3>
-        Gaming
-      </h3>
-
-      <p>
-        Gameplay, tournaments, challenges and creators.
-      </p>
-
-      <div class="world-arrow">
-        →
-      </div>
-
-    </a>
-
-
-    <a href="entertainment.html" class="world">
-
-      <div class="world-icon">
-        🎬
-      </div>
-
-      <h3>
-        Entertainment
-      </h3>
-
-      <p>
-        Shows, stories, culture and special content.
-      </p>
-
-      <div class="world-arrow">
-        →
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  © 2026 <strong>JESSENDINHO™️</strong> —
-  Your World. Your Entertainment.
-
-</footer>
-
+  <footer class="footer" id="siteFooter"></footer>
 </body>
 </html>
