@@ -1,116 +1,367 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JESSENDINHO™️ — Football</title><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<meta name="description" content="Discover football stories, clubs, players and highlights on JESSENDINHO.">
+<title>Football | JESSENDINHO™</title>
 
-*{
-    box-sizing:border-box;
+<style>
+:root {
+  --bg:#080a10;
+  --panel:#11141e;
+  --panel2:#191d29;
+  --text:#f6f7fb;
+  --muted:#9ba1b0;
+  --red:#ff3048;
+  --border:rgba(255,255,255,.09);
 }
-
-body{
-    margin:0;
-    background:#080808;
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
 }
-
-a{
-    text-decoration:none;
-    color:inherit;
+a { color:inherit;text-decoration:none; }
+button,input { font:inherit; }
+header {
+  min-height:72px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(8,10,16,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(15px);
 }
-
-header{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 5%;
-    background:#111;
-    border-bottom:1px solid #222;
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:-.5px;
 }
-
-.logo img{
-    width:46px;
-    height:46px;
-    object-fit:cover;
+.brand img { width:42px;height:42px;object-fit:contain; }
+.brand span { color:var(--red); }
+nav { display:flex;align-items:center;gap:25px; }
+nav a { font-size:13px;color:#b8bdca; }
+nav a:hover,nav a.active { color:white; }
+.nav-cta {
+  background:var(--red);
+  color:white;
+  padding:12px 16px;
+  border-radius:9px;
+  font-weight:800;
 }
-
-.back{
-    color:#aaa;
-    font-size:14px;
+main { max-width:1400px;margin:auto;padding:30px 6% 75px; }
+.hero {
+  min-height:390px;
+  display:flex;
+  align-items:center;
+  padding:clamp(26px,5vw,58px);
+  border:1px solid var(--border);
+  border-radius:21px;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(8,10,16,.98),rgba(8,10,16,.79) 52%,rgba(8,10,16,.16)),
+    url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
 }
-
-.container{
-    width:min(1100px,92%);
-    margin:60px auto;
+.hero-content { max-width:610px; }
+.eyebrow {
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:15px;
 }
-
-.hero h1{
-    font-size:52px;
-    margin:0 0 15px;
+h1 {
+  font-size:clamp(42px,7vw,76px);
+  line-height:.98;
+  letter-spacing:-3px;
+  margin:0 0 20px;
 }
-
-.hero p{
-    color:#999;
-    font-size:17px;
-    line-height:1.6;
-    max-width:650px;
+.hero p {
+  color:#c6cad4;
+  font-size:15px;
+  line-height:1.8;
+  max-width:490px;
 }
-
-.feature{
-    margin-top:45px;
-    padding:35px;
-    background:#141414;
-    border:1px solid #292929;
-    border-radius:16px;
+.actions { display:flex;flex-wrap:wrap;gap:11px;margin-top:25px; }
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:800;
+  border:1px solid var(--border);
 }
+.primary { background:var(--red);border-color:var(--red); }
+.secondary { background:rgba(255,255,255,.07); }
 
-.feature h2{
-    margin-top:0;
-    font-size:28px;
+.section { margin-top:43px; }
+.section-head { margin-bottom:21px; }
+h2 { margin:0 0 8px;font-size:clamp(23px,3vw,30px);letter-spacing:-.8px; }
+.section-head p { color:var(--muted);font-size:13px;line-height:1.7;margin:0; }
+
+.feature-grid {
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:18px;
 }
-
-.feature p{
-    color:#888;
-    line-height:1.6;
+.feature {
+  position:relative;
+  min-height:255px;
+  overflow:hidden;
+  border-radius:15px;
+  border:1px solid var(--border);
+  background:var(--panel);
 }
-
-.button{
-    display:inline-block;
-    margin-top:15px;
-    padding:13px 22px;
-    background:#e50914;
-    border-radius:8px;
-    font-weight:bold;
+.feature img {
+  width:100%;height:100%;min-height:255px;
+  object-fit:cover;display:block;
+  transition:transform .3s;
 }
-
-footer{
-    text-align:center;
-    color:#555;
-    padding:50px 20px;
-    border-top:1px solid #1d1d1d;
-    margin-top:70px;
+.feature:hover img { transform:scale(1.04); }
+.feature::after {
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(5,7,12,.97),rgba(5,7,12,.03) 90%);
 }
-
-@media(max-width:650px){
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .container{
-        margin:40px auto;
-    }
-
+.feature-copy {
+  position:absolute;z-index:1;bottom:0;left:0;right:0;padding:23px;
 }
+.feature-copy small {
+  color:#ff6677;text-transform:uppercase;
+  letter-spacing:1.5px;font-size:10px;font-weight:900;
+}
+.feature-copy h3 { margin:9px 0;font-size:clamp(20px,3vw,28px); }
+.feature-copy p { color:#c0c4cf;font-size:12px;line-height:1.6;margin:0;max-width:430px; }
 
-</style></head><body><header><a href="index.html" class="logo"><img src="jessendinho-logo.png" alt="JESSENDINHO™️"></a><a href="explore.html" class="back">
-← Explore
-</a></header><main class="container"><section class="hero"><h1>Football</h1><p>
-Your football destination on JESSENDINHO™️.
-Follow matches, highlights, analysis and special football content.
-</p></section><section class="feature"><h2>⚽ Football Live</h2><p>
-Watch football content and live events from JESSENDINHO™️.
-</p><a href="watch.html" class="button">
-Watch Live
-</a></section></main><footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.
+.topic-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:17px;
+}
+.topic {
+  display:block;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--panel);
+  transition:transform .2s,border-color .2s;
+}
+.topic:hover { transform:translateY(-4px);border-color:rgba(255,48,72,.55); }
+.topic img { width:100%;height:165px;object-fit:cover;display:block; }
+.topic-copy { padding:18px; }
+.topic-copy small {
+  color:var(--red);font-size:10px;
+  text-transform:uppercase;letter-spacing:1px;font-weight:900;
+}
+.topic-copy h3 { margin:9px 0;font-size:18px; }
+.topic-copy p { color:var(--muted);font-size:12px;line-height:1.7;margin:0 0 15px; }
+.topic-link { font-size:12px;font-weight:800; }
+.topic-link span { color:var(--red); }
 
-</footer></body></html>
+.club-panel {
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:linear-gradient(120deg,#191d29,#10121a);
+}
+.club-panel h2 { margin-bottom:10px; }
+.club-panel p { margin:0;color:var(--muted);font-size:13px;line-height:1.7;max-width:580px; }
+.club-panel .btn { flex-shrink:0; }
+
+footer {
+  padding:26px 6% 85px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  color:var(--muted);
+  font-size:12px;
+}
+footer strong { color:white; }
+.mobile-nav { display:none; }
+
+@media(max-width:800px) {
+  header { padding:0 4%; }
+  nav { gap:14px; }
+  nav a:not(.nav-cta) { display:none; }
+  main { padding:22px 4% 55px; }
+  .feature-grid { grid-template-columns:1fr 1fr;gap:12px; }
+  .feature,.feature img { min-height:220px; }
+  .feature-copy { padding:15px; }
+  .topic-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:12px; }
+  .topic img { height:145px; }
+}
+@media(max-width:520px) {
+  .brand { font-size:16px; }
+  .brand img { width:36px;height:36px; }
+  .nav-cta { font-size:11px;padding:11px; }
+  .hero { min-height:380px;padding:25px 21px;border-radius:16px;background-position:60% center; }
+  h1 { letter-spacing:-1.8px; }
+  .hero p { font-size:13px; }
+  .section { margin-top:32px; }
+  .feature-grid { grid-template-columns:1fr; }
+  .feature,.feature img { min-height:235px; }
+  .topic-grid { grid-template-columns:1fr; }
+  .topic img { height:190px; }
+  .club-panel { padding:21px;align-items:flex-start;flex-direction:column; }
+  .mobile-nav {
+    display:grid;grid-template-columns:repeat(4,1fr);
+    position:fixed;bottom:0;left:0;right:0;z-index:20;
+    padding:10px 4px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(12,14,22,.97);
+    border-top:1px solid var(--border);
+    backdrop-filter:blur(15px);
+  }
+  .mobile-nav a {
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    color:#9ca2b1;font-size:10px;
+  }
+  .mobile-nav a span { font-size:19px; }
+  .mobile-nav a.active { color:white; }
+  footer { padding-bottom:28px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <a class="brand" href="index.html" aria-label="JESSENDINHO home">
+    <img src="jessendinho-logo.png" alt="">
+    <div>JESSENDINHO<span>™</span></div>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="watch.html">Live Events</a>
+    <a href="explore.html">Explore</a>
+    <a class="active" href="football.html">Football</a>
+    <a class="nav-cta" href="#discover">Discover</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">THE BEAUTIFUL GAME</div>
+      <h1>Football.<br>Without limits.</h1>
+      <p>Discover the stories, rivalries, players and moments that make football the world's game.</p>
+      <div class="actions">
+        <a class="btn primary" href="#discover">Explore football ↗</a>
+        <a class="btn secondary" href="watch.html">Browse all content</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="discover">
+    <div class="section-head">
+      <div class="eyebrow">YOUR FOOTBALL WORLD</div>
+      <h2>Where do we start?</h2>
+      <p>Explore football through its biggest stories and most exciting subjects.</p>
+    </div>
+
+    <div class="feature-grid">
+      <a class="feature" href="#stories">
+        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=85" alt="Football stadium">
+        <div class="feature-copy">
+          <small>THE GLOBAL GAME</small>
+          <h3>Inside football</h3>
+          <p>Stories, competitions and moments from across the football world.</p>
+        </div>
+      </a>
+
+      <a class="feature" href="#players">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=1000&q=85" alt="Football pitch">
+        <div class="feature-copy">
+          <small>PLAYERS & LEGENDS</small>
+          <h3>Made for greatness</h3>
+          <p>Discover the players and careers that shape the beautiful game.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="stories">
+    <div class="section-head">
+      <div class="eyebrow">EXPLORE THE GAME</div>
+      <h2>More than 90 minutes</h2>
+      <p>Choose a subject and explore the football world your way.</p>
+    </div>
+
+    <div class="topic-grid">
+      <a class="topic" href="watch.html">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80" alt="Football on the pitch">
+        <div class="topic-copy">
+          <small>Matches & competitions</small>
+          <h3>The action</h3>
+          <p>Explore football content, match stories and competition coverage.</p>
+          <div class="topic-link">Discover content <span>↗</span></div>
+        </div>
+      </a>
+
+      <a class="topic" href="#players" id="players">
+        <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80" alt="Football training">
+        <div class="topic-copy">
+          <small>Players & legends</small>
+          <h3>The greats</h3>
+          <p>Explore player stories, careers, achievements and football legacies.</p>
+          <div class="topic-link">Explore stories <span>↗</span></div>
+        </div>
+      </a>
+
+      <a class="topic" href="explore.html">
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80" alt="Football match">
+        <div class="topic-copy">
+          <small>Culture & rivalries</small>
+          <h3>The bigger picture</h3>
+          <p>Discover rivalries, football culture and the stories behind the game.</p>
+          <div class="topic-link">Explore more <span>↗</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="club-panel">
+      <div>
+        <div class="eyebrow">KEEP EXPLORING</div>
+        <h2>Your next football story awaits.</h2>
+        <p>Head back to the content directory to explore football alongside gaming and entertainment.</p>
+      </div>
+      <a class="btn primary" href="watch.html">Explore content ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div><strong>JESSENDINHO™</strong> · Your World. Your Entertainment.</div>
+  <div>Football · Gaming · Entertainment</div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="index.html"><span>⌂</span>Home</a>
+  <a href="watch.html"><span>▷</span>Live Events</a>
+  <a href="explore.html"><span>⌕</span>Explore</a>
+  <a class="active" href="football.html"><span>⚽</span>Football</a>
+</div>
+</body>
+</html>
