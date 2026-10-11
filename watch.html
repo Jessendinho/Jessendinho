@@ -1,24 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080a10">
+<meta name="theme-color" content="#050505">
 <meta name="description" content="Discover football, gaming and entertainment on JESSENDINHO.">
 <title>Live Events | JESSENDINHO™</title>
 
 <style>
 :root {
-  --bg: #080a10;
-  --panel: #11141e;
-  --panel2: #171b27;
-  --text: #f6f7fb;
-  --muted: #969cac;
-  --red: #ff3048;
-  --border: rgba(255,255,255,.09);
+  --bg: #050505;
+  --panel: #101010;
+  --panel2: #191919;
+  --text: #ffffff;
+  --muted: #a5a5a5;
+  --red: #ff2638;
+  --border: rgba(255,255,255,.10);
 }
+
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   margin: 0;
   background: var(--bg);
@@ -30,85 +32,108 @@ button, input { font: inherit; }
 button { cursor: pointer; }
 
 header {
-  height: 76px;
-  padding: 0 6%;
+  min-height: 76px;
+  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: rgba(8,10,16,.96);
+  background: rgba(5,5,5,.97);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 10;
   backdrop-filter: blur(16px);
 }
+
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
+  flex-shrink: 0;
   font-size: 19px;
   font-weight: 900;
-  letter-spacing: -.6px;
+  letter-spacing: -.7px;
 }
 .brand img { width: 43px; height: 43px; object-fit: contain; }
 .brand span { color: var(--red); }
-nav { display: flex; gap: 27px; align-items: center; }
-nav a { font-size: 13px; color: #b5bac7; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+nav a { font-size: 12px; font-weight: 700; color: #bdbdbd; }
 nav a:hover, nav a.active { color: white; }
 .nav-cta {
   background: var(--red);
-  padding: 12px 17px;
-  border-radius: 9px;
+  padding: 12px 16px;
+  border-radius: 7px;
   color: white;
-  font-weight: 800;
-  font-size: 13px;
+  font-weight: 900;
 }
 
-main { max-width: 1400px; margin: auto; padding: 34px 6% 100px; }
+main {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  padding: 32px 5% 80px;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 310px;
-  border-radius: 22px;
-  padding: clamp(28px,5vw,58px);
+  min-height: 330px;
+  border-radius: 18px;
+  padding: clamp(28px,5vw,60px);
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg,rgba(8,10,16,.98) 0%,rgba(8,10,16,.82) 48%,rgba(8,10,16,.2) 100%),
-    linear-gradient(0deg,rgba(8,10,16,.35),rgba(8,10,16,.1)),
+    linear-gradient(90deg,rgba(0,0,0,.98),rgba(0,0,0,.82) 48%,rgba(0,0,0,.25)),
     url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85') center/cover;
   border: 1px solid var(--border);
 }
-.hero-content { max-width: 600px; position: relative; z-index: 1; }
+.hero-content { max-width: 620px; position: relative; z-index: 1; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 11px;
   font-weight: 900;
   color: var(--red);
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 h1 {
-  font-size: clamp(38px,6vw,68px);
-  letter-spacing: -2.5px;
-  line-height: .99;
+  font-size: clamp(40px,6vw,72px);
+  letter-spacing: -2.8px;
+  line-height: .98;
   margin: 0 0 18px;
+  font-weight: 900;
 }
-.hero p { color: #c4c8d3; font-size: 15px; line-height: 1.8; max-width: 490px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.hero p {
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 490px;
+  margin: 0;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 19px;
+  padding: 14px 18px;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 7px;
   color: white;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 12px;
+  transition: background .2s, transform .2s;
 }
+.btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--red); border-color: var(--red); }
+.btn-primary:hover { background: #e51c2d; }
 .btn-secondary { background: rgba(255,255,255,.06); }
 
 .section { margin-top: 43px; }
@@ -119,41 +144,48 @@ h1 {
   gap: 16px;
   margin-bottom: 21px;
 }
-h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
-.section-head p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.6; }
+h2 {
+  font-size: clamp(23px,3vw,31px);
+  margin: 0 0 8px;
+  letter-spacing: -.8px;
+  font-weight: 900;
+}
+.section-head p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.7; }
+
 .categories {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 13px;
 }
 .category {
+  min-width: 0;
   text-align: left;
   display: flex;
   align-items: center;
-  gap: 13px;
-  padding: 18px;
+  gap: 12px;
+  padding: 17px;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 10px;
   color: white;
   transition: .2s ease;
 }
 .category:hover, .category.active {
-  background: #1a1d29;
-  border-color: rgba(255,48,72,.7);
+  background: #191010;
+  border-color: var(--red);
   transform: translateY(-2px);
 }
 .cat-icon {
   width: 43px;
   height: 43px;
-  border-radius: 12px;
+  border-radius: 9px;
   display: grid;
   place-items: center;
-  background: rgba(255,48,72,.12);
+  background: rgba(255,38,56,.13);
   font-size: 21px;
   flex-shrink: 0;
 }
-.category strong { display: block; font-size: 14px; margin-bottom: 5px; }
+.category strong { display: block; font-size: 13px; margin-bottom: 5px; }
 .category small { color: var(--muted); font-size: 11px; }
 
 .directory {
@@ -166,24 +198,27 @@ h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
 }
 .search {
   width: min(100%,350px);
-  padding: 14px 16px;
+  padding: 14px 15px;
   background: var(--panel);
   color: white;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
 }
+.search::placeholder { color: #858585; }
 .search:focus { border-color: var(--red); }
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
 .filter {
   border: 1px solid var(--border);
   background: var(--panel);
-  color: #b9becc;
-  padding: 10px 15px;
-  border-radius: 9px;
-  font-size: 12px;
-  font-weight: 800;
+  color: #c5c5c5;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 900;
+  transition: .2s;
 }
+.filter:hover { border-color: var(--red); }
 .filter.active { background: var(--red); border-color: var(--red); color: white; }
 
 .event-grid {
@@ -195,13 +230,13 @@ h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
   min-width: 0;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: 11px;
   overflow: hidden;
   transition: transform .2s,border-color .2s;
 }
-.event-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.22); }
+.event-card:hover { transform: translateY(-4px); border-color: rgba(255,38,56,.65); }
 .event-art {
-  height: 175px;
+  height: 180px;
   position: relative;
   display: flex;
   align-items: center;
@@ -209,12 +244,19 @@ h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
   background: var(--panel2);
   overflow: hidden;
 }
-.event-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.event-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s;
+}
+.event-card:hover .event-art img { transform: scale(1.04); }
 .event-art::after {
   content: "";
   position: absolute;
   inset: 35% 0 0;
-  background: linear-gradient(transparent,rgba(8,10,16,.7));
+  background: linear-gradient(transparent,rgba(0,0,0,.8));
   pointer-events: none;
 }
 .event-tag {
@@ -223,14 +265,14 @@ h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
   top: 12px;
   left: 12px;
   padding: 7px 9px;
-  border-radius: 6px;
-  background: rgba(8,10,16,.85);
+  border-radius: 4px;
+  background: var(--red);
   color: white;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
-  letter-spacing: .5px;
+  letter-spacing: .7px;
 }
-.event-body { padding: 18px; }
+.event-body { padding: 19px; }
 .event-category {
   color: var(--red);
   text-transform: uppercase;
@@ -238,30 +280,34 @@ h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
   font-weight: 900;
   letter-spacing: 1.3px;
 }
-.event-body h3 { font-size: 18px; margin: 10px 0; letter-spacing: -.4px; }
-.event-body p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0 0 17px; }
-.event-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: white;
-  font-size: 12px;
-  font-weight: 800;
-}
+.event-body h3 { font-size: 18px; margin: 10px 0; letter-spacing: -.4px; font-weight: 900; }
+.event-body p { color: var(--muted); font-size: 12px; line-height: 1.8; margin: 0 0 17px; }
+.event-link { display: inline-flex; align-items: center; gap: 7px; color: white; font-size: 12px; font-weight: 900; }
+.event-link:hover { color: var(--red); }
 .event-link span { color: var(--red); font-size: 16px; }
-.empty { display: none; padding: 40px 15px; text-align: center; color: var(--muted); }
-
+.empty {
+  display: none;
+  padding: 40px 15px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--panel);
+  border-radius: 10px;
+}
 .notice {
   margin-top: 25px;
-  padding: 14px 16px;
+  padding: 15px 16px;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-left: 3px solid var(--red);
+  border-radius: 7px;
+  background: var(--panel);
   color: var(--muted);
   font-size: 11px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
+.notice strong { color: white; }
+
 footer {
-  padding: 28px 6% 100px;
+  padding: 28px 5% 35px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 12px;
@@ -271,60 +317,89 @@ footer {
   gap: 14px;
 }
 footer strong { color: white; }
-
 .mobile-nav { display: none; }
 
-@media(max-width:850px) {
-  header { padding: 0 4%; height: 68px; }
-  nav { gap: 14px; }
-  nav a:not(.nav-cta) { display: none; }
-  main { padding: 23px 4% 70px; }
+@media(max-width:1050px) {
+  header { padding-left: 4%; padding-right: 4%; }
+  nav { gap: 12px; }
+  nav a { font-size: 11px; }
+  .brand { font-size: 17px; }
+  main { padding-left: 4%; padding-right: 4%; }
   .categories { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+  header { min-height: 67px; padding: 10px 4%; }
+  nav a:not(.nav-cta) { display: none; }
+  .nav-cta { padding: 11px 13px; }
+  main { padding-top: 20px; }
   .event-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; }
   .event-art { height: 145px; }
 }
 @media(max-width:520px) {
   .brand { font-size: 16px; gap: 8px; }
   .brand img { width: 36px; height: 36px; }
-  .nav-cta { padding: 11px 12px; font-size: 11px; }
-  main { padding-top: 16px; }
-  .hero { min-height: 360px; border-radius: 16px; background-position: 60% center; }
-  h1 { letter-spacing: -1.5px; }
+  .nav-cta { font-size: 11px; padding: 10px 12px; }
+  main { padding: 15px 4% 40px; }
+  .hero {
+    min-height: 355px;
+    border-radius: 12px;
+    padding: 25px 21px;
+    background-position: 60% center;
+  }
+  h1 { letter-spacing: -1.7px; }
   .hero p { font-size: 13px; }
+  .hero-actions { gap: 9px; }
+  .btn { padding: 13px 12px; font-size: 11px; }
   .section { margin-top: 32px; }
   .categories { gap: 9px; }
-  .category { padding: 12px 10px; gap: 9px; }
-  .cat-icon { width: 36px; height: 36px; font-size: 17px; }
+  .category { padding: 12px 10px; gap: 9px; border-radius: 8px; }
+  .cat-icon { width: 35px; height: 35px; font-size: 17px; border-radius: 7px; }
   .category strong { font-size: 12px; }
   .category small { font-size: 10px; }
-  .directory { align-items: stretch; }
+  .directory { align-items: stretch; gap: 12px; }
   .search { width: 100%; }
-  .filters { width: 100%; }
-  .filter { flex: 1; padding: 10px 8px; }
+  .filters { width: 100%; gap: 6px; }
+  .filter { flex: 1; padding: 10px 5px; font-size: 10px; }
   .event-grid { grid-template-columns: 1fr; }
   .event-art { height: 190px; }
   .event-body { padding: 17px; }
   .mobile-nav {
     position: fixed;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,minmax(0,1fr));
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 20;
-    padding: 10px 4px calc(10px + env(safe-area-inset-bottom));
-    background: rgba(12,14,22,.97);
+    padding: 9px 4px calc(9px + env(safe-area-inset-bottom));
+    background: rgba(8,8,8,.97);
     border-top: 1px solid var(--border);
     backdrop-filter: blur(15px);
   }
-  .mobile-nav a { display: flex; flex-direction: column; align-items: center; gap: 5px; color: #9ca2b1; font-size: 10px; }
+  .mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #999;
+    font-size: 10px;
+    font-weight: 700;
+  }
   .mobile-nav a span { font-size: 19px; }
   .mobile-nav a.active { color: white; }
-  footer { padding-bottom: 30px; }
+  .mobile-nav a.active span { color: var(--red); }
+  footer { padding: 25px 4% 85px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
 }
 </style>
-</head>
-
+  </head>
+  
 <body>
 <header>
   <a class="brand" href="index.html" aria-label="JESSENDINHO home">
@@ -333,10 +408,12 @@ footer strong { color: white; }
   </a>
   <nav aria-label="Main navigation">
     <a href="index.html">Home</a>
-    <a href="watch.html" class="active">Live Events</a>
+    <a href="watch.html" class="active" aria-current="page">Live Events</a>
     <a href="explore.html">Explore</a>
     <a href="football.html">Football</a>
-    <a class="nav-cta" href="#events">Discover</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="entertainment.html">Entertainment</a>
+    <a class="nav-cta" href="#events">Discover ↗</a>
   </nav>
 </header>
 
@@ -345,7 +422,7 @@ footer strong { color: white; }
     <div class="hero-content">
       <div class="eyebrow">YOUR WORLD. YOUR ENTERTAINMENT.</div>
       <h1>Find your<br>next watch.</h1>
-      <p>Football, gaming and entertainment — explore the content you love, all in one place.</p>
+      <p>Football, gaming and entertainment — discover the content you love, all in one place.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#events">Explore content ↗</a>
         <a class="btn btn-secondary" href="#categories">Browse categories</a>
@@ -363,21 +440,21 @@ footer strong { color: white; }
     </div>
 
     <div class="categories">
-      <button class="category active" data-category="all">
+      <button class="category active" data-category="all" type="button">
         <span class="cat-icon">✦</span>
         <span><strong>Everything</strong><small>All categories</small></span>
       </button>
-      <button class="category" data-category="football">
+      <button class="category" data-category="football" type="button">
         <span class="cat-icon">⚽</span>
-        <span><strong>Football</strong><small>Matches & stories</small></span>
+        <span><strong>Football</strong><small>Matches &amp; stories</small></span>
       </button>
-      <button class="category" data-category="gaming">
+      <button class="category" data-category="gaming" type="button">
         <span class="cat-icon">🎮</span>
-        <span><strong>Gaming</strong><small>Play & compete</small></span>
+        <span><strong>Gaming</strong><small>Play &amp; compete</small></span>
       </button>
-      <button class="category" data-category="entertainment">
+      <button class="category" data-category="entertainment" type="button">
         <span class="cat-icon">🎬</span>
-        <span><strong>Entertainment</strong><small>Shows & culture</small></span>
+        <span><strong>Entertainment</strong><small>Shows &amp; culture</small></span>
       </button>
     </div>
   </section>
@@ -392,19 +469,23 @@ footer strong { color: white; }
     </div>
 
     <div class="directory">
-      <input class="search" id="search" type="search" placeholder="Search categories or content..." aria-label="Search content">
+      <input class="search" id="search" type="search"
+        placeholder="Search categories or content..."
+        aria-label="Search content">
+
       <div class="filters" aria-label="Filter content">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="football">Football</button>
-        <button class="filter" data-filter="gaming">Gaming</button>
-        <button class="filter" data-filter="entertainment">Entertainment</button>
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="football" type="button">Football</button>
+        <button class="filter" data-filter="gaming" type="button">Gaming</button>
+        <button class="filter" data-filter="entertainment" type="button">Entertainment</button>
       </div>
     </div>
 
     <div class="event-grid" id="eventGrid">
       <article class="event-card" data-category="football">
         <div class="event-art">
-          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Football stadium">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            alt="Football stadium" loading="lazy">
           <span class="event-tag">FOOTBALL</span>
         </div>
         <div class="event-body">
@@ -417,7 +498,8 @@ footer strong { color: white; }
 
       <article class="event-card" data-category="gaming">
         <div class="event-art">
-          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" alt="Gaming setup">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            alt="Gaming setup" loading="lazy">
           <span class="event-tag">GAMING</span>
         </div>
         <div class="event-body">
@@ -430,7 +512,8 @@ footer strong { color: white; }
 
       <article class="event-card" data-category="entertainment">
         <div class="event-art">
-          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80" alt="Cinema seats">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+            alt="Cinema seats" loading="lazy">
           <span class="event-tag">ENTERTAINMENT</span>
         </div>
         <div class="event-body">
@@ -441,10 +524,15 @@ footer strong { color: white; }
         </div>
       </article>
     </div>
-    <div class="empty" id="empty">No matching content found. Try another search.</div>
+
+    <div class="empty" id="empty" role="status">
+      No matching content found. Try another search.
+    </div>
 
     <div class="notice">
-      <strong>About availability:</strong> These are category discovery cards, not confirmed live broadcasts or event schedules. A stream should only be marked LIVE when its availability has been verified.
+      <strong>About availability:</strong>
+      These are category discovery cards, not confirmed live broadcasts or event schedules.
+      A stream should only be marked LIVE when its availability has been verified.
     </div>
   </section>
 </main>
@@ -454,9 +542,9 @@ footer strong { color: white; }
   <div>Football · Gaming · Entertainment</div>
 </footer>
 
-<div class="mobile-nav">
+<div class="mobile-nav" aria-label="Mobile navigation">
   <a href="index.html"><span>⌂</span>Home</a>
-  <a class="active" href="watch.html"><span>▷</span>Live Events</a>
+  <a class="active" href="watch.html" aria-current="page"><span>▷</span>Live Events</a>
   <a href="explore.html"><span>⌕</span>Explore</a>
   <a href="#categories"><span>▦</span>Categories</a>
 </div>
@@ -467,6 +555,7 @@ const categoryButtons = [...document.querySelectorAll('[data-category]')];
 const filterButtons = [...document.querySelectorAll('[data-filter]')];
 const search = document.getElementById('search');
 const empty = document.getElementById('empty');
+
 let activeCategory = 'all';
 
 function updateCards() {
@@ -475,9 +564,12 @@ function updateCards() {
 
   cards.forEach(card => {
     const category = card.dataset.category;
-    const matchesCategory = activeCategory === 'all' || category === activeCategory;
-    const matchesSearch = card.textContent.toLowerCase().includes(query);
+    const matchesCategory =
+      activeCategory === 'all' || category === activeCategory;
+    const matchesSearch =
+      card.textContent.toLowerCase().includes(query);
     const show = matchesCategory && matchesSearch;
+
     card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
@@ -489,10 +581,17 @@ function selectCategory(category) {
   activeCategory = category;
 
   categoryButtons.forEach(button => {
-    button.classList.toggle('active', button.dataset.category === category);
+    button.classList.toggle(
+      'active',
+      button.dataset.category === category
+    );
   });
+
   filterButtons.forEach(button => {
-    button.classList.toggle('active', button.dataset.filter === category);
+    button.classList.toggle(
+      'active',
+      button.dataset.filter === category
+    );
   });
 
   updateCards();
@@ -501,15 +600,21 @@ function selectCategory(category) {
 categoryButtons.forEach(button => {
   button.addEventListener('click', () => {
     selectCategory(button.dataset.category);
-    document.getElementById('events').scrollIntoView({behavior:'smooth'});
+    document.getElementById('events').scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
 filterButtons.forEach(button => {
-  button.addEventListener('click', () => selectCategory(button.dataset.filter));
+  button.addEventListener('click', () => {
+    selectCategory(button.dataset.filter);
+  });
 });
 
 search.addEventListener('input', updateCards);
+updateCards();
 </script>
 </body>
-          </html>
+      </html>
+      
