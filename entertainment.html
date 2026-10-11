@@ -1,116 +1,405 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JESSENDINHO™️ — Entertainment</title><style>
 
-*{
-    box-sizing:border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
 
-body{
-    margin:0;
-    background:#080808;
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
-}
+  <title>Entertainment | JESSENDINHO™</title>
+  <meta name="description" content="Explore entertainment, trending stories, screen culture and memorable moments with JESSENDINHO.">
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+  <link rel="icon" type="image/png" href="jessendinho-logo.png">
+  <link rel="stylesheet" href="styles.css">
 
-header{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 5%;
-    background:#111;
-    border-bottom:1px solid #222;
-}
-
-.logo img{
-    width:46px;
-    height:46px;
-    object-fit:cover;
-}
-
-.back{
-    color:#aaa;
-    font-size:14px;
-}
-
-.container{
-    width:min(1100px,92%);
-    margin:60px auto;
-}
-
-.hero h1{
-    font-size:52px;
-    margin:0 0 15px;
-}
-
-.hero p{
-    color:#999;
-    font-size:17px;
-    line-height:1.6;
-    max-width:650px;
-}
-
-.feature{
-    margin-top:45px;
-    padding:35px;
-    background:#141414;
-    border:1px solid #292929;
-    border-radius:16px;
-}
-
-.feature h2{
-    margin-top:0;
-    font-size:28px;
-}
-
-.feature p{
-    color:#888;
-    line-height:1.6;
-}
-
-.button{
-    display:inline-block;
-    margin-top:15px;
-    padding:13px 22px;
-    background:#e50914;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    color:#555;
-    padding:50px 20px;
-    border-top:1px solid #1d1d1d;
-    margin-top:70px;
-}
-
-@media(max-width:650px){
-
-    .hero h1{
-        font-size:40px;
+  <style>
+    :root {
+      --bg: #080808;
+      --panel: #141414;
+      --red: #ff2638;
+      --white: #fff;
+      --muted: #aaa;
     }
 
-    .container{
-        margin:40px auto;
+    * {
+      box-sizing: border-box;
     }
 
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-</style></head><body><header><a href="index.html" class="logo"><img src="jessendinho-logo.png" alt="JESSENDINHO™️"></a><a href="explore.html" class="back">
-← Explore
-</a></header><main class="container"><section class="hero"><h1>Entertainment</h1><p>
-Discover entertainment from JESSENDINHO™️ —
-shows, stories, creators and special content from around the world.
-</p></section><section class="feature"><h2>🎬 Entertainment</h2><p>
-Explore original shows, special programs and live entertainment on JESSENDINHO™️.
-</p><a href="watch.html" class="button">
-Watch Live
-</a></section></main><footer>© 2026 JESSENDINHO™️ — Your World. Your Entertainment.
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-</footer></body></html>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .ent-header {
+      min-height: 76px;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: #090909;
+      border-bottom: 1px solid #252525;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -.5px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .back-link {
+      padding: 11px 15px;
+      border: 1px solid #383838;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .back-link:hover {
+      border-color: var(--red);
+    }
+
+    .ent-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 450px;
+      padding: 85px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 35%, #5d1019 0%, transparent 42%),
+        linear-gradient(115deg, #111, #1b1012 55%, #080808);
+      border-bottom: 1px solid #282020;
+    }
+
+    .ent-hero::after {
+      content: "ENTERTAIN";
+      position: absolute;
+      z-index: -1;
+      right: -15px;
+      bottom: -15px;
+      font-size: clamp(65px, 13vw, 165px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, .035);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 670px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .ent-hero h1 {
+      margin: 0 0 22px;
+      font-size: clamp(43px, 8vw, 78px);
+      line-height: .99;
+      letter-spacing: -3px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ent-hero h1 span {
+      color: var(--red);
+    }
+
+    .hero-description {
+      max-width: 480px;
+      margin: 0 0 28px;
+      color: #c2c2c2;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .action {
+      min-height: 47px;
+      padding: 15px 21px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 900;
+      transition: .2s ease;
+    }
+
+    .action:hover {
+      transform: translateY(-2px);
+    }
+
+    .action-primary {
+      background: var(--red);
+    }
+
+    .action-primary:hover {
+      background: #d91b2c;
+    }
+
+    .action-secondary {
+      background: #151515;
+      border: 1px solid #454545;
+    }
+
+    .action-secondary:hover {
+      background: #242424;
+    }
+
+    .ent-content {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 6% 75px;
+    }
+
+    .section-heading {
+      margin-bottom: 27px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(25px, 4vw, 34px);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .ent-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ent-card {
+      min-height: 200px;
+      padding: 25px;
+      background: linear-gradient(145deg, #191919, #101010);
+      border: 1px solid #292929;
+      border-radius: 11px;
+      transition: .2s ease;
+    }
+
+    .ent-card:hover {
+      border-color: #8d202b;
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .ent-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .ent-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .card-label {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .ent-footer {
+      padding: 25px 6%;
+      text-align: center;
+      color: #888;
+      border-top: 1px solid #252525;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .ent-footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .ent-header {
+        padding: 13px 5%;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 16px;
+      }
+
+      .brand img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .back-link {
+        padding: 10px 11px;
+        font-size: 12px;
+      }
+
+      .ent-hero {
+        min-height: 410px;
+        padding: 65px 6%;
+      }
+
+      .ent-hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .ent-content {
+        padding: 42px 5% 55px;
+      }
+
+      .ent-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .ent-card {
+        min-height: 175px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="ent-header">
+    <a class="brand" href="index.html" aria-label="JESSENDINHO home">
+      <img src="jessendinho-logo.png" alt="JESSENDINHO logo">
+      <div>JESSENDINHO<span>™</span></div>
+    </a>
+
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <main>
+    <section class="ent-hero">
+      <div class="hero-content">
+        <div class="eyebrow">JESSENDINHO • ENTERTAINMENT</div>
+
+        <h1>YOUR WORLD.<br><span>YOUR SHOW.</span></h1>
+
+        <p class="hero-description">
+          Discover the stories, personalities and moments shaping
+          entertainment. Your destination for what's happening
+          across the world of entertainment.
+        </p>
+
+        <div class="hero-actions">
+          <a class="action action-primary" href="#ent-content">
+            EXPLORE ENTERTAINMENT ↗
+          </a>
+
+          <a class="action action-secondary" href="watch.html">
+            WATCH LIVE
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ent-content" id="ent-content">
+      <div class="section-heading">
+        <h2>THE ENTERTAINMENT ZONE</h2>
+        <p>Stories, screens, personalities and moments worth talking about.</p>
+      </div>
+
+      <div class="ent-grid">
+        <article class="ent-card">
+          <div class="card-icon">🎬</div>
+          <h3>Movies & Series</h3>
+          <p>Explore the world of film, television, new releases and memorable screen moments.</p>
+          <span class="card-label">ON SCREEN</span>
+        </article>
+
+        <article class="ent-card">
+          <div class="card-icon">🌟</div>
+          <h3>Celebrity & Culture</h3>
+          <p>Discover celebrity stories, public figures and conversations shaping popular culture.</p>
+          <span class="card-label">PEOPLE & CULTURE</span>
+        </article>
+
+        <article class="ent-card">
+          <div class="card-icon">🔥</div>
+          <h3>Trending Stories</h3>
+          <p>Catch up on viral moments, internet conversations and entertainment trends.</p>
+          <span class="card-label">WHAT'S TRENDING</span>
+        </article>
+
+        <article class="ent-card">
+          <div class="card-icon">📡</div>
+          <h3>Watch Live</h3>
+          <p>Visit the JESSENDINHO live page for streaming information and future live experiences.</p>
+          <a class="card-label" href="watch.html">GO TO WATCH LIVE ↗</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ent-footer">
+    <strong>JESSENDINHO™</strong><br>
+    Your World. Your Entertainment.<br>
+    © <span id="year"></span> JESSENDINHO. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
