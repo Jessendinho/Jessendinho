@@ -1,102 +1,515 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#070a12">
-  <meta name="description" content="Explore football, gaming and entertainment events on JESSENDINHO.">
-  <title>Live Events · JESSENDINHO™️</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<meta name="description" content="Discover football, gaming and entertainment on JESSENDINHO.">
+<title>Live Events | JESSENDINHO™</title>
+
+<style>
+:root {
+  --bg: #080a10;
+  --panel: #11141e;
+  --panel2: #171b27;
+  --text: #f6f7fb;
+  --muted: #969cac;
+  --red: #ff3048;
+  --border: rgba(255,255,255,.09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+header {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(8,10,16,.96);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -.6px;
+}
+.brand img { width: 43px; height: 43px; object-fit: contain; }
+.brand span { color: var(--red); }
+nav { display: flex; gap: 27px; align-items: center; }
+nav a { font-size: 13px; color: #b5bac7; }
+nav a:hover, nav a.active { color: white; }
+.nav-cta {
+  background: var(--red);
+  padding: 12px 17px;
+  border-radius: 9px;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+main { max-width: 1400px; margin: auto; padding: 34px 6% 100px; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 310px;
+  border-radius: 22px;
+  padding: clamp(28px,5vw,58px);
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg,rgba(8,10,16,.98) 0%,rgba(8,10,16,.82) 48%,rgba(8,10,16,.2) 100%),
+    linear-gradient(0deg,rgba(8,10,16,.35),rgba(8,10,16,.1)),
+    url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85') center/cover;
+  border: 1px solid var(--border);
+}
+.hero-content { max-width: 600px; position: relative; z-index: 1; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: clamp(38px,6vw,68px);
+  letter-spacing: -2.5px;
+  line-height: .99;
+  margin: 0 0 18px;
+}
+.hero p { color: #c4c8d3; font-size: 15px; line-height: 1.8; max-width: 490px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 19px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+}
+.btn-primary { background: var(--red); border-color: var(--red); }
+.btn-secondary { background: rgba(255,255,255,.06); }
+
+.section { margin-top: 43px; }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 21px;
+}
+h2 { font-size: clamp(22px,3vw,29px); margin: 0 0 8px; letter-spacing: -.7px; }
+.section-head p { color: var(--muted); margin: 0; font-size: 13px; line-height: 1.6; }
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 13px;
+}
+.category {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: white;
+  transition: .2s ease;
+}
+.category:hover, .category.active {
+  background: #1a1d29;
+  border-color: rgba(255,48,72,.7);
+  transform: translateY(-2px);
+}
+.cat-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,48,72,.12);
+  font-size: 21px;
+  flex-shrink: 0;
+}
+.category strong { display: block; font-size: 14px; margin-bottom: 5px; }
+.category small { color: var(--muted); font-size: 11px; }
+
+.directory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 23px 0;
+  flex-wrap: wrap;
+}
+.search {
+  width: min(100%,350px);
+  padding: 14px 16px;
+  background: var(--panel);
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+}
+.search:focus { border-color: var(--red); }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: #b9becc;
+  padding: 10px 15px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.filter.active { background: var(--red); border-color: var(--red); color: white; }
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 19px;
+}
+.event-card {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform .2s,border-color .2s;
+}
+.event-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.22); }
+.event-art {
+  height: 175px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel2);
+  overflow: hidden;
+}
+.event-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.event-art::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent,rgba(8,10,16,.7));
+  pointer-events: none;
+}
+.event-tag {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(8,10,16,.85);
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+.event-body { padding: 18px; }
+.event-category {
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+.event-body h3 { font-size: 18px; margin: 10px 0; letter-spacing: -.4px; }
+.event-body p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0 0 17px; }
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+.event-link span { color: var(--red); font-size: 16px; }
+.empty { display: none; padding: 40px 15px; text-align: center; color: var(--muted); }
+
+.notice {
+  margin-top: 25px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+footer {
+  padding: 28px 6% 100px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+footer strong { color: white; }
+
+.mobile-nav { display: none; }
+
+@media(max-width:850px) {
+  header { padding: 0 4%; height: 68px; }
+  nav { gap: 14px; }
+  nav a:not(.nav-cta) { display: none; }
+  main { padding: 23px 4% 70px; }
+  .categories { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .event-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; }
+  .event-art { height: 145px; }
+}
+@media(max-width:520px) {
+  .brand { font-size: 16px; gap: 8px; }
+  .brand img { width: 36px; height: 36px; }
+  .nav-cta { padding: 11px 12px; font-size: 11px; }
+  main { padding-top: 16px; }
+  .hero { min-height: 360px; border-radius: 16px; background-position: 60% center; }
+  h1 { letter-spacing: -1.5px; }
+  .hero p { font-size: 13px; }
+  .section { margin-top: 32px; }
+  .categories { gap: 9px; }
+  .category { padding: 12px 10px; gap: 9px; }
+  .cat-icon { width: 36px; height: 36px; font-size: 17px; }
+  .category strong { font-size: 12px; }
+  .category small { font-size: 10px; }
+  .directory { align-items: stretch; }
+  .search { width: 100%; }
+  .filters { width: 100%; }
+  .filter { flex: 1; padding: 10px 8px; }
+  .event-grid { grid-template-columns: 1fr; }
+  .event-art { height: 190px; }
+  .event-body { padding: 17px; }
+  .mobile-nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 10px 4px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(12,14,22,.97);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+  }
+  .mobile-nav a { display: flex; flex-direction: column; align-items: center; gap: 5px; color: #9ca2b1; font-size: 10px; }
+  .mobile-nav a span { font-size: 19px; }
+  .mobile-nav a.active { color: white; }
+  footer { padding-bottom: 30px; }
+}
+</style>
 </head>
 
 <body>
-  <div id="siteHeader"></div>
+<header>
+  <a class="brand" href="index.html" aria-label="JESSENDINHO home">
+    <img src="jessendinho-logo.png" alt="">
+    <div>JESSENDINHO<span>™</span></div>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="watch.html" class="active">Live Events</a>
+    <a href="explore.html">Explore</a>
+    <a href="football.html">Football</a>
+    <a class="nav-cta" href="#events">Discover</a>
+  </nav>
+</header>
 
-  <main class="page-main">
-    <section class="page-intro">
-      <div class="eyebrow">YOUR ENTERTAINMENT HUB</div>
-      <h1>Live Events</h1>
-      <p class="lead">
-        Discover events across football, gaming and entertainment.
-        Find what is live, what is coming up and what you may have missed.
-      </p>
-    </section>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">YOUR WORLD. YOUR ENTERTAINMENT.</div>
+      <h1>Find your<br>next watch.</h1>
+      <p>Football, gaming and entertainment — explore the content you love, all in one place.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#events">Explore content ↗</a>
+        <a class="btn btn-secondary" href="#categories">Browse categories</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>Browse categories</h2>
-          <p>Choose the world you want to explore.</p>
+  <section class="section" id="categories">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">PICK YOUR WORLD</div>
+        <h2>Explore categories</h2>
+        <p>Choose what you feel like watching.</p>
+      </div>
+    </div>
+
+    <div class="categories">
+      <button class="category active" data-category="all">
+        <span class="cat-icon">✦</span>
+        <span><strong>Everything</strong><small>All categories</small></span>
+      </button>
+      <button class="category" data-category="football">
+        <span class="cat-icon">⚽</span>
+        <span><strong>Football</strong><small>Matches & stories</small></span>
+      </button>
+      <button class="category" data-category="gaming">
+        <span class="cat-icon">🎮</span>
+        <span><strong>Gaming</strong><small>Play & compete</small></span>
+      </button>
+      <button class="category" data-category="entertainment">
+        <span class="cat-icon">🎬</span>
+        <span><strong>Entertainment</strong><small>Shows & culture</small></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">THE JESSENDINHO DIRECTORY</div>
+        <h2>Discover something new</h2>
+        <p>Browse featured content by category or search below.</p>
+      </div>
+    </div>
+
+    <div class="directory">
+      <input class="search" id="search" type="search" placeholder="Search categories or content..." aria-label="Search content">
+      <div class="filters" aria-label="Filter content">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="football">Football</button>
+        <button class="filter" data-filter="gaming">Gaming</button>
+        <button class="filter" data-filter="entertainment">Entertainment</button>
+      </div>
+    </div>
+
+    <div class="event-grid" id="eventGrid">
+      <article class="event-card" data-category="football">
+        <div class="event-art">
+          <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Football stadium">
+          <span class="event-tag">FOOTBALL</span>
         </div>
-      </div>
-
-      <div class="category-row">
-        <button class="category-tile active" type="button" data-category="all">
-          <span class="tile-icon">✦</span>
-          <span><strong>All Events</strong><br><small>Everything</small></span>
-        </button>
-
-        <button class="category-tile" type="button" data-category="football">
-          <span class="tile-icon">⚽</span>
-          <span><strong>Football</strong><br><small>Matches &amp; stories</small></span>
-        </button>
-
-        <button class="category-tile" type="button" data-category="gaming">
-          <span class="tile-icon">🎮</span>
-          <span><strong>Gaming</strong><br><small>Play &amp; compete</small></span>
-        </button>
-
-        <button class="category-tile" type="button" data-category="entertainment">
-          <span class="tile-icon">🎬</span>
-          <span><strong>Entertainment</strong><br><small>Shows &amp; culture</small></span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">EVENT DIRECTORY</div>
-          <h2>Find your next watch</h2>
-          <p>Filter events by status or search by name.</p>
+        <div class="event-body">
+          <div class="event-category">Football</div>
+          <h3>The world of football</h3>
+          <p>Discover football stories, highlights and content from the beautiful game.</p>
+          <a class="event-link" href="football.html">Explore football <span>↗</span></a>
         </div>
-      </div>
+      </article>
 
-      <div class="event-controls">
-        <label class="search-label" for="eventSearch">Search events</label>
-        <input
-          id="eventSearch"
-          type="search"
-          placeholder="Search events..."
-          autocomplete="off"
-        >
-
-        <div class="filter-row" aria-label="Filter events by status">
-          <button class="filter-btn active" type="button" data-status="all">All</button>
-          <button class="filter-btn" type="button" data-status="live">Live</button>
-          <button class="filter-btn" type="button" data-status="upcoming">Upcoming</button>
-          <button class="filter-btn" type="button" data-status="recent">Recent</button>
+      <article class="event-card" data-category="gaming">
+        <div class="event-art">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" alt="Gaming setup">
+          <span class="event-tag">GAMING</span>
         </div>
-      </div>
+        <div class="event-body">
+          <div class="event-category">Gaming</div>
+          <h3>Enter the gaming zone</h3>
+          <p>Explore gaming videos, gameplay and the latest gaming culture.</p>
+          <a class="event-link" href="gaming.html">Explore gaming <span>↗</span></a>
+        </div>
+      </article>
 
-      <div id="eventGrid" class="content-grid">
-        <p>Loading events...</p>
-      </div>
+      <article class="event-card" data-category="entertainment">
+        <div class="event-art">
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80" alt="Cinema seats">
+          <span class="event-tag">ENTERTAINMENT</span>
+        </div>
+        <div class="event-body">
+          <div class="event-category">Entertainment</div>
+          <h3>More to discover</h3>
+          <p>Explore entertainment, screen culture and stories worth your time.</p>
+          <a class="event-link" href="entertainment.html">Explore entertainment <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+    <div class="empty" id="empty">No matching content found. Try another search.</div>
 
-      <div id="emptyEvents" class="empty-state" hidden>
-        <div class="content-art">⌕</div>
-        <h3>No matching events</h3>
-        <p>Try another category, status or search term.</p>
-      </div>
+    <div class="notice">
+      <strong>About availability:</strong> These are category discovery cards, not confirmed live broadcasts or event schedules. A stream should only be marked LIVE when its availability has been verified.
+    </div>
+  </section>
+</main>
 
-      <p class="disclaimer">
-        Event examples are illustrative, not confirmed fixtures or schedules.
-        Only verified streams should be labelled LIVE.
-      </p>
-    </section>
-  </main>
+<footer>
+  <div><strong>JESSENDINHO™</strong> · Your World. Your Entertainment.</div>
+  <div>Football · Gaming · Entertainment</div>
+</footer>
 
-  <footer class="footer" id="siteFooter"></footer>
+<div class="mobile-nav">
+  <a href="index.html"><span>⌂</span>Home</a>
+  <a class="active" href="watch.html"><span>▷</span>Live Events</a>
+  <a href="explore.html"><span>⌕</span>Explore</a>
+  <a href="#categories"><span>▦</span>Categories</a>
+</div>
+
+<script>
+const cards = [...document.querySelectorAll('.event-card')];
+const categoryButtons = [...document.querySelectorAll('[data-category]')];
+const filterButtons = [...document.querySelectorAll('[data-filter]')];
+const search = document.getElementById('search');
+const empty = document.getElementById('empty');
+let activeCategory = 'all';
+
+function updateCards() {
+  const query = search.value.trim().toLowerCase();
+  let visible = 0;
+
+  cards.forEach(card => {
+    const category = card.dataset.category;
+    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+    const matchesSearch = card.textContent.toLowerCase().includes(query);
+    const show = matchesCategory && matchesSearch;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  empty.style.display = visible ? 'none' : 'block';
+}
+
+function selectCategory(category) {
+  activeCategory = category;
+
+  categoryButtons.forEach(button => {
+    button.classList.toggle('active', button.dataset.category === category);
+  });
+  filterButtons.forEach(button => {
+    button.classList.toggle('active', button.dataset.filter === category);
+  });
+
+  updateCards();
+}
+
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    selectCategory(button.dataset.category);
+    document.getElementById('events').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => selectCategory(button.dataset.filter));
+});
+
+search.addEventListener('input', updateCards);
+</script>
 </body>
-</html>
+  </html>
